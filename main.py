@@ -264,9 +264,9 @@ with col1:
     st.markdown("### Contributors")
     st.markdown(
         """
-        - <a href="https://github.com/Larence2005" style="text-decoration:none; color:black;">John Larence Lusaya</a>  
-        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:black;">Edelle Lumabi</a>  
-        - <a href="https://github.com/sophiavitug10" style="text-decoration:none; color:black;">Sophia Vitug</a>
+        - <a href="https://github.com/Larence2005" style="text-decoration:none; color:white;">John Larence Lusaya</a>  
+        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:white;">Edelle Lumabi</a>  
+        - <a href="https://github.com/sophiavitug10" style="text-decoration:none; color:white;">Sophia Vitug</a>
         """, 
         unsafe_allow_html=True
     )
@@ -275,7 +275,7 @@ with col2:
     st.markdown("### Main Repository")
     st.markdown(
         """
-        • <a href="https://github.com/Larence2005/Group-4-Laptop-Prices" style="text-decoration:none; color:black;">View on GitHub</a>
+        • <a href="https://github.com/Larence2005/Group-4-Laptop-Prices" style="text-decoration:none; color:white;">View on GitHub</a>
         """, 
         unsafe_allow_html=True
     )
