@@ -80,7 +80,40 @@ chart = alt.Chart(df).mark_bar().encode(
 # Display the chart
 st.altair_chart(chart, use_container_width=True)
 
+#CPU_Company Pie Graph (SOPHIA VITUG)
+# Create a title for the app
+st.title("CPU Company Distribution")
+st.write("This pie graph illustrates that Intel dominates with a significant market share, accounting for 95.5% of CPUs (1,214 units). AMD follows with 4.7% (60 units), while Samsung represents a negligible portion with only 1 unit, making up less than 0.1%. Upon observing this pie graph, it suggests that Intel is the dominant brand for CPU in laptops, with AMD having a minor but noticeable presence, and Samsung being almost nonexistent.")
 
+# DATA
+data = {'CPU_Company' : ['Intel'] * 1214 + ['AMD'] * 60 + ['Samsung'] * 1}
+df = pd.DataFrame(data)
+
+# Calculate CPU company counts
+cpu_counts = df['CPU_Company'].value_counts()
+
+# Function to create the pie chart
+def create_pie_chart(labels, sizes, label_type):
+    fig, ax = plt.subplots(figsize=(8, 8))
+    
+    if label_type == "percentage":
+        ax.pie(sizes, labels=labels, autopct='%1.1f%%')
+    else:
+        ax.pie(sizes, labels=[f"{label}: {size}" for label, size in zip(labels, sizes)])
+    
+    ax.set_title('CPU Company Distribution')
+    return fig
+
+# Get labels and sizes
+labels = cpu_counts.index.tolist()
+sizes = cpu_counts.values.tolist()
+
+# User input for label type
+label_type = st.selectbox("Choose label type:", ["Percentage", "Count"])
+
+# Create and display the pie chart
+fig = create_pie_chart(labels, sizes, label_type.lower())
+st.pyplot(fig)
 
 
 
