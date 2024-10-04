@@ -294,8 +294,6 @@ with col2:
     )
 
 with col3:
-    with col1:
-    st.markdown("### Contributors")
     st.markdown(
         """
         <p>© Group 4 - BM3</p>
