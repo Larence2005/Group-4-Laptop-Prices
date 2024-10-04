@@ -294,8 +294,13 @@ with col2:
     )
 
 with col3:
-    st.write('')
-    st.write('© Group 4 - BM3')
-    st.write('2024. All rights reserved.')
-    st.write('Mapua University - Makati')
-    
+    with col1:
+    st.markdown("### Contributors")
+    st.markdown(
+        """
+        <p>© Group 4 - BM3</p>
+        <p>2024. All rights reserved.</p>
+        <p>Mapua University - Makati</p>
+        """, 
+        unsafe_allow_html=True
+    )
