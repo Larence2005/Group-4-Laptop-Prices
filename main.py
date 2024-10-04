@@ -284,3 +284,12 @@ with col2:
         """, 
         unsafe_allow_html=True
     )
+    st.write('')
+    st.markdown("### Google Colab")
+    st.markdown(
+        """
+        - <a href="https://colab.research.google.com/drive/11aJWw77VGMlYehHPJNIqTT0UDC-sdsTT?usp=sharing&fbclid=IwY2xjawFiUxNleHRuA2FlbQIxMAABHX9PyWKgfDOWhwvIL-jNZ3LzqTKxenn_0kcFhe7zqT3DGo9iiTg8tQFGDQ_aem_zv9k5pN3oqaiXDyEMqPy9Q#scrollTo=8RL5-7v5MXwW" style="text-decoration:none;">View on Google Colab Notebook</a>
+        """, 
+        unsafe_allow_html=True
+    )
+    
