@@ -16,12 +16,16 @@ st.markdown("<h3>GROUP 4 - BM3</h3>", unsafe_allow_html=True)
 st.write("The purpose of this is to convert our previous Data Visualization activity in Google Colab Notebook into a Streamlit Web Application")
 st.markdown("- Check the GitHub Repository at the bottom for the source code.")
 st.write('')
+st.markdown('<hr style="border:2px solid gray">', unsafe_allow_html=True)
+st.write('')
+st.write('')
 "# Describing the Dataset"
 
 df = pd.read_csv("laptop_price - dataset.csv")
 df
 
 df.info()
+st.write('')
 
 st.write("The sum of each categorical column can be seen below")
 
