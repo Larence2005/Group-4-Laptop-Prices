@@ -245,23 +245,51 @@ st.write('')
 
 
 
+
+
+#=====================================THIS IS A FOOTER=====================================
 st.write('')
 st.write('')
 st.write('')
 st.write('')
 st.write('')
 st.write('')
-# Footer
+
 st.markdown("---")
 st.markdown(
     """
-    ### Contributors:
-    - [John Larence Lusaya](https://github.com/Larence2005)  
-    - [Edelle Lumabi](https://github.com/edelle-del)  
-    - [Sophia Vitug](https://github.com/sophiavitug10)
-    
-    ### Main Repository:
-    [Click here to view the GitHub Repository](https://github.com/Larence2005/Group-4-Laptop-Prices)
+    <style>
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    a:hover {
+        color: #ff4b4b;
+    }
+    </style>
     """, 
     unsafe_allow_html=True
 )
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown("### Contributors")
+    st.markdown(
+        """
+        - <a href="https://github.com/Larence2005">John Larence Lusaya</a>  
+        - <a href="https://github.com/edelle-del">Edelle Lumabi</a>  
+        - <a href="https://github.com/sophiavitug10">Sophia Vitug</a>
+        """, 
+        unsafe_allow_html=True
+    )
+
+with col2:
+    st.markdown("### Main Repository")
+    st.markdown(
+        """
+        <a href="https://github.com/Larence2005/Group-4-Laptop-Prices">View on GitHub</a>
+        """, 
+        unsafe_allow_html=True
+    )
+st.markdown('<hr style="border:1px solid gray">', unsafe_allow_html=True)
