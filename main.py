@@ -47,6 +47,8 @@ data = {
               19, 19, 15, 12, 11, 10, 6, 5, 3, 3,
               2, 2, 1, 1, 1]
 }
+df = pd.DataFrame(data)
+df
 
 # Extract values
 cpu_frequency = df["CPU_Frequency (GHz)"].values
