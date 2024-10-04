@@ -33,3 +33,9 @@ desc
 
 company = df['Company'].value_counts()
 company
+
+
+st.title("CPU Frequency (GHz")
+cpu_freq = df['CPU_Frequency (GHz)'].value_counts()
+cpu_freq
+
