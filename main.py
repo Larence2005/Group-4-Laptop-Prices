@@ -11,7 +11,7 @@ st.title('Analyzing Laptops and Their Prices')
 st.write('')
 st.write('')
 
-st.markdown("<h3'>GROUP 4 - BM3</h3>", unsafe_allow_html=True)
+st.markdown("<h3>GROUP 4 - BM3</h3>", unsafe_allow_html=True)
 
 st.write("The purpose of this is to convert our previous Data Visualization activity in Google Colab Notebook into a Streamlit Web Application")
 st.markdown("- Check the GitHub Repository at the bottom for the source code.")
@@ -263,11 +263,11 @@ with col1:
     st.markdown("### Contributors")
     st.markdown(
         """
-        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:lightblue;">Edelle Lumabi</a>
-        - <a href="https://github.com/Larence2005" style="text-decoration:none; color:lightblue;">John Larence Lusaya</a> 
-        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:lightblue;">Nicholas Rian Pastiu</a>
-        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:lightblue;">Daniel Santillan</a>
-        - <a href="https://github.com/sophiavitug10" style="text-decoration:none; color:lightblue;">Sophia Vitug</a>
+        - <a href="https://github.com/edelle-del" style="text-decoration:none;">Edelle Lumabi</a>
+        - <a href="https://github.com/Larence2005" style="text-decoration:none;">John Larence Lusaya</a> 
+        - <a href="https://github.com/edelle-del" style="text-decoration:none;">Nicholas Rian Pastiu</a>
+        - <a href="https://github.com/edelle-del" style="text-decoration:none;">Daniel Santillan</a>
+        - <a href="https://github.com/sophiavitug10" style="text-decoration:none;">Sophia Vitug</a>
         """, 
         unsafe_allow_html=True
     )
@@ -276,7 +276,7 @@ with col2:
     st.markdown("### Main Repository")
     st.markdown(
         """
-        - <a href="https://github.com/Larence2005/Group-4-Laptop-Prices" style="text-decoration:none; color:blue;">View on GitHub</a>
+        - <a href="https://github.com/Larence2005/Group-4-Laptop-Prices" style="text-decoration:none;">View on GitHub</a>
         """, 
         unsafe_allow_html=True
     )
