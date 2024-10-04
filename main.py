@@ -40,6 +40,7 @@ company
 
 # Create a title for the app
 st.title("Screen Resolution Distribution in Laptops")
+st.write("The findings indicate that Full HD 1920x1080 is the most prevalent screen resolution among laptops, accounting for 505 units and greatly exceeding other resolutions. In contrast bold text, and higher-end resolutions including IPS Panel Full HD 1920x1200 and IPS Panel Touchscreen 2400x1600 are less prevalent because they have 1 unit compared to Full HD 1920-1080. Overall, this bar chart highlights that Full HD screens are the most prevalent in modern laptops while higher resolutions are rare.")
 
 # DATA
 data = {
@@ -79,8 +80,6 @@ chart = alt.Chart(df).mark_bar().encode(
 # Display the chart
 st.altair_chart(chart, use_container_width=True)
 
-# Add a subtitle
-st.write("The findings indicate that Full HD 1920x1080 is the most prevalent screen resolution among laptops, accounting for 505 units and greatly exceeding other resolutions. In contrast bold text, and higher-end resolutions including IPS Panel Full HD 1920x1200 and IPS Panel Touchscreen 2400x1600 are less prevalent because they have 1 unit compared to Full HD 1920-1080. Overall, this bar chart highlights that Full HD screens are the most prevalent in modern laptops while higher resolutions are rare.")
 
 
 
@@ -89,7 +88,6 @@ st.write("The findings indicate that Full HD 1920x1080 is the most prevalent scr
 st.title('CPU Frequency Bar Graph')
 st.write('The data indicates a strong preference for CPUs in the 2.00 GHz to 2.90 GHz range, highlighting consumer demand trends and market availability. CPUs with lower frequencies are less frequently found.')
 
-# Data
 data = {
     "CPU_Frequency (GHz)": [2.50, 2.80, 2.70, 1.60, 2.30, 2.00, 1.80, 2.60, 1.10, 2.40,
                             2.90, 3.00, 1.20, 1.44, 2.20, 1.50, 1.30, 3.60, 3.10, 2.10,
@@ -99,6 +97,7 @@ data = {
               2, 2, 1, 1, 1]
 }
 df = pd.DataFrame(data)
+df
 
 # Extract values
 cpu_frequency = df["CPU_Frequency (GHz)"].values
