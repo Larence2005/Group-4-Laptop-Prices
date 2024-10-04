@@ -36,6 +36,54 @@ desc
 company = df['Company'].value_counts()
 company
 
+#Screen Resolution Bar Graph (SOPHIA VITUG)
+
+# Create a title for the app
+st.title("Screen Resolution Distribution in Laptops")
+
+# DATA
+data = {
+    'ScreenResolution': [
+        'Full HD 1920x1080', '1366x786', 'IPS Panel Full HD 1920x1080',
+        'IPS Panel Full HD / Touchscreen 1920x1080', 'Full HD / Touchscreen 1920x1080',
+        '1600x900', 'Touchscreen 1366/768', 'Quad HD+ / Touchscreen 3200x1800',
+        'IPS Panel 4k Ultra HD 3840x2160', 'IPS Panel 4k Ultra HD / Touchscreen 3840x2160',
+        '4K Ultra HD / Touchscreen 3840x2160', '4K Ultra HD 3840X2160', 'Touchscreen 2560x1440',
+        'IPS Panel 1366x768', 'IPS Panel Retina Display 2560x1660', 'IPS Panel Retina Display 2304x1440',
+        'Touchscreen 2256x1504', 'IPS Panel Touchscreen 2560x1440', 'IPS Panel Quad HD+ / Touchscreen 3200x1800',
+        'IPS Panel Touchscreen 1920x1200', '1440x900', 'IPS Panel Retina Display 2880x1800',
+        'IPS Panel 2560x1440','2560x1440', 'Quad HD+ 3200X1800', '1920x1080','Touchscreen 2400x1600',
+        'IPS Quad HD+ 2560x1440', 'IPS Panel Touchscreen 1366x768', 'IPS Panel Touchscreen / 4k Ultra HD 3840X2160',
+        'IPS Panel Full HD 2160X1440', 'IPS Panel HD+ 3200x1800', 'IPS Panel Retina Display 2736x1824',
+        'IPS Panel Full HD 1920x1200', 'IPS Panel Full HD 2560x1440', 'IPS Panel Full HD 1366x768',
+        'Touchscreen / Full HD 1920X1080', 'Touchscreen / Quad HD+ 3200X1800', 'Touchscreen / 4K Ultra HD 3840x2160',
+        'IPS Panel Touchscreen 2400x1600'
+    ],
+    'Count': [
+        505, 263, 226, 51, 47, 23, 16, 15, 12, 11, 10, 7, 7, 7, 6, 6, 6, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1
+    ]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Sort the dataframe
+df = df.sort_values(by='Count', ascending=False)
+
+# Create Altair chart
+chart = alt.Chart(df).mark_bar().encode(
+    x='Count',
+    y=alt.Y('ScreenResolution', sort='-x')
+)
+
+# Display the chart
+st.altair_chart(chart, use_container_width=True)
+
+# Add a subtitle
+st.write("The findings indicate that Full HD 1920x1080 is the most prevalent screen resolution among laptops, accounting for 505 units and greatly exceeding other resolutions. In contrast bold text, and higher-end resolutions including IPS Panel Full HD 1920x1200 and IPS Panel Touchscreen 2400x1600 are less prevalent because they have 1 unit compared to Full HD 1920-1080. Overall, this bar chart highlights that Full HD screens are the most prevalent in modern laptops while higher resolutions are rare.")
+
+
+
 
 # CPU Frequency Bar Graph (JOHN LARENCE LUSAYA)
 st.title('CPU Frequency Bar Graph')
