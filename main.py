@@ -261,7 +261,7 @@ st.write('')
 
 st.markdown('<hr style="border:2px solid gray">', unsafe_allow_html=True)
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 with col1:
     st.markdown("### Contributors")
@@ -288,8 +288,12 @@ with col2:
     st.markdown("### Google Colab")
     st.markdown(
         """
-        - <a href="https://colab.research.google.com/drive/11aJWw77VGMlYehHPJNIqTT0UDC-sdsTT?usp=sharing&fbclid=IwY2xjawFiUxNleHRuA2FlbQIxMAABHX9PyWKgfDOWhwvIL-jNZ3LzqTKxenn_0kcFhe7zqT3DGo9iiTg8tQFGDQ_aem_zv9k5pN3oqaiXDyEMqPy9Q#scrollTo=8RL5-7v5MXwW" style="text-decoration:none;">Open the notebook</a>
+        - <a href="https://colab.research.google.com/drive/11aJWw77VGMlYehHPJNIqTT0UDC-sdsTT?usp=sharing&fbclid=IwY2xjawFiUxNleHRuA2FlbQIxMAABHX9PyWKgfDOWhwvIL-jNZ3LzqTKxenn_0kcFhe7zqT3DGo9iiTg8tQFGDQ_aem_zv9k5pN3oqaiXDyEMqPy9Q#scrollTo=8RL5-7v5MXwW" style="text-decoration:none;">Open the Notebook</a>
         """, 
         unsafe_allow_html=True
     )
-    
+
+with col3:
+    st.write('© Group 4 - BM3 | 2024. All rights reserved.')
+    st.write('Mapua University - Makati')
+    )
