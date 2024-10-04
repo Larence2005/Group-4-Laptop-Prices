@@ -255,21 +255,8 @@ st.write('')
 st.write('')
 st.write('')
 
-st.markdown("---")
-st.markdown(
-    """
-    <style>
-    a {
-        text-decoration: none;
-        color: black;
-    }
-    a:hover {
-        color: #ff4b4b;
-    }
-    </style>
-    """, 
-    unsafe_allow_html=True
-)
+
+st.markdown('<hr style="border:1px solid gray">', unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
@@ -292,4 +279,3 @@ with col2:
         """, 
         unsafe_allow_html=True
     )
-st.markdown('<hr style="border:1px solid gray">', unsafe_allow_html=True)
