@@ -16,7 +16,7 @@ st.markdown("<h3>GROUP 4 - BM3</h3>", unsafe_allow_html=True)
 st.write("The purpose of this is to convert our previous Data Visualization activity in Google Colab Notebook into a Streamlit Web Application")
 st.markdown("- Check the GitHub Repository at the bottom for the source code.")
 st.write('')
-st.markdown('<hr style="border:2px solid gray">', unsafe_allow_html=True)
+st.markdown('<hr style="border:1px solid gray">', unsafe_allow_html=True)
 st.write('')
 st.write('')
 "# Describing the Dataset"
@@ -259,7 +259,7 @@ st.write('')
 st.write('')
 st.write('')
 
-st.markdown('<hr style="border:2px solid gray">', unsafe_allow_html=True)
+st.markdown('<hr style="border:1px solid gray">', unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns(3)
 
@@ -294,10 +294,11 @@ with col2:
     )
 
 with col3:
+    st.write('')
     st.markdown(
         """
-        <p>© Group 4 - BM3</p>
-        <p>2024. All rights reserved.</p>
+        <p>© GROUP 4 - BM3</p>
+        <p>2024. All Rights Reserved.</p>
         <p>Mapua University - Makati</p>
         """, 
         unsafe_allow_html=True
