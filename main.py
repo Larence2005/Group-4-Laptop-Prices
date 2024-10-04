@@ -208,3 +208,34 @@ st.pyplot(fig)
 st.write('')
 st.write('')
 
+
+#GPU Type Bar Graph (JOHN LARENCE LUSAYA)
+gpus = [
+    'HD Graphics 620', 'HD Graphics 520', 'UHD Graphics 620', 'GeForce GTX 1050',
+    'GeForce GTX 1060', 'Graphics 620', 'Radeon R5 520', 'Radeon R7',
+    'HD Graphics 540', 'Mali T860 MP4'
+]
+counts = [280, 181, 68, 66, 48, 1, 1, 1, 1, 1]
+
+colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#A133FF',
+          '#FFC300', '#DAF7A6', '#FFC300', '#581845', '#900C3F']
+
+st.title("GPU Type Bar Graph")
+st.write('The number of varieties of GPU is indicated in the bar graph with a total of 280 units, HD Graphics 620 is the most frequently used type. Following it is HD Graphics 520 with 181 units. Others include UHD Graphics 620, GeForce GTX 1050, and others stand at 68 and 66 units respectively. Most other types of GPU had few units, with several having only 1 unit. This shows that integrated graphics, particularly from Intel, are preferred than the discrete GPUs.')
+st.write('')
+
+fig, ax = plt.subplots(figsize=(12, 6))
+ax.bar(gpus, counts, color=colors)
+ax.set_title('GPU Type')
+ax.set_xlabel('GPU Type')
+ax.set_ylabel('Count')
+ax.set_xticklabels(gpus, rotation=45, ha='right')
+
+for i, v in enumerate(counts):
+    ax.text(i, v, str(v), ha='center', va='bottom')
+
+plt.tight_layout()
+
+st.pyplot(fig)
+st.write('')
+st.write('')
