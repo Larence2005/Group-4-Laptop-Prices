@@ -11,10 +11,10 @@ st.title('Analyzing Laptops and Their Prices')
 st.write('')
 st.write('')
 
-"## GROUP 4 - BM3"
+st.markdown("<h3'>GROUP 4 - BM3</h3>", unsafe_allow_html=True)
 
 st.write("The purpose of this is to convert our previous Data Visualization activity in Google Colab Notebook into a Streamlit Web Application")
-st.markdown("Also check the GitHub Repository at the bottom for the source code.")
+st.markdown("- Check the GitHub Repository at the bottom for the source code.")
 st.write('')
 "# Describing the Dataset"
 
@@ -263,11 +263,11 @@ with col1:
     st.markdown("### Contributors")
     st.markdown(
         """
-        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:blue;">Edelle Lumabi</a>
-        - <a href="https://github.com/Larence2005" style="text-decoration:none; color:blue;">John Larence Lusaya</a> 
-        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:blue;">Nicholas Rian Pastiu</a>
-        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:blue;">Daniel Santillan</a>
-        - <a href="https://github.com/sophiavitug10" style="text-decoration:none; color:blue;">Sophia Vitug</a>
+        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:lightblue;">Edelle Lumabi</a>
+        - <a href="https://github.com/Larence2005" style="text-decoration:none; color:lightblue;">John Larence Lusaya</a> 
+        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:lightblue;">Nicholas Rian Pastiu</a>
+        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:lightblue;">Daniel Santillan</a>
+        - <a href="https://github.com/sophiavitug10" style="text-decoration:none; color:lightblue;">Sophia Vitug</a>
         """, 
         unsafe_allow_html=True
     )
