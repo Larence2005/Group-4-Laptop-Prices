@@ -7,7 +7,7 @@ import altair as alt
 from wordcloud import WordCloud
 from mpl_toolkits.mplot3d import Axes3D
 
-st.title('Analyzing Laptops and Their Prices')
+st.title('Analyzing Laptops and Their Prices\n\n\n')
 
 "## GROUP 4 - BM3"
 
