@@ -14,7 +14,7 @@ st.write('')
 "## GROUP 4 - BM3"
 
 st.write("The purpose of this is to convert our previous Data Visualization activity in Google Colab Notebook into a Streamlit Web Application")
-st.markdown("Also check the [GitHub Repository](https://github.com/Larence2005/Group-4-Laptop-Prices) for the source code.")
+st.markdown("Also check the GitHub Repository at the bottom for the source code.")
 st.write('')
 "# Describing the Dataset"
 
