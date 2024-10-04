@@ -35,7 +35,8 @@ company = df['Company'].value_counts()
 company
 
 # CPU Frequency Bar Graph (JOHN LARENCE LUSAYA)
-df['CPU_Frequency (GHz)'].value_counts()
+cpu_freq = df['CPU_Frequency (GHz)'].value_counts()
+cpu_freq
 
 data = {
     "CPU_Frequency (GHz)": [2.50, 2.80, 2.70, 1.60, 2.30, 2.00, 1.80, 2.60, 1.10, 2.40,
