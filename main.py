@@ -239,3 +239,29 @@ plt.tight_layout()
 st.pyplot(fig)
 st.write('')
 st.write('')
+
+
+
+
+
+
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+# Footer
+st.markdown("---")
+st.markdown(
+    """
+    ### Contributors:
+    - [John Larence Lusaya](https://github.com/Larence2005)  
+    - [Edelle Lumabi](https://github.com/edelle-del)  
+    - [Sophia Vitug](https://github.com/sophiavitug10)
+    
+    ### Main Repository:
+    [Click here to view the GitHub Repository](https://github.com/Larence2005/Group-4-Laptop-Prices)
+    """, 
+    unsafe_allow_html=True
+)
