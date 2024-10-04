@@ -50,6 +50,7 @@ data = {
 
 # Create DataFrame
 df = pd.DataFrame(data)
+df
 
 # Extract values
 cpu_frequency = df["CPU_Frequency (GHz)"].values
