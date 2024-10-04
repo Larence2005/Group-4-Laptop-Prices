@@ -142,15 +142,14 @@ chart = chart.properties(
     height=600
 )
 
-# Display the chart
 st.altair_chart(chart)
+
 
 
 # CPU Frequency Bar Graph (JOHN LARENCE LUSAYA)
 st.title('CPU Frequency Bar Graph')
 st.write('The data indicates a strong preference for CPUs in the 2.00 GHz to 2.90 GHz range, highlighting consumer demand trends and market availability. CPUs with lower frequencies are less frequently found.')
 
-# Data
 data = {
     "CPU_Frequency (GHz)": [2.50, 2.80, 2.70, 1.60, 2.30, 2.00, 1.80, 2.60, 1.10, 2.40,
                             2.90, 3.00, 1.20, 1.44, 2.20, 1.50, 1.30, 3.60, 3.10, 2.10,
@@ -161,28 +160,37 @@ data = {
 }
 df = pd.DataFrame(data)
 
-# Extract values
 cpu_frequency = df["CPU_Frequency (GHz)"].values
 count = df["count"].values
 x = np.arange(len(cpu_frequency))
 
-# Plot
 fig, ax = plt.subplots(figsize=(12, 6))
 colors = plt.cm.viridis(np.linspace(0, 1, len(cpu_frequency)))
 ax.bar(x, count, color=colors)
 
-# Labels and title
 ax.set_xlabel('CPU Frequency (GHz)')
 ax.set_ylabel('Count')
 ax.set_title('CPU Frequency Preference')
 
-# Customize x-axis labels
 ax.set_xticks(x)
 ax.set_xticklabels(cpu_frequency, rotation=40, ha='right', fontsize=10)
 
-# Adjust layout
 plt.tight_layout()
 plt.subplots_adjust(bottom=0.15)
 
-# Display the plot in Streamlit
+st.pyplot(fig)
+
+
+
+#GPU Company Pie Graph (JOHN LARENCE LUSAYA)
+gpu_companies = ['Intel', 'Nvidia', 'AMD', 'ARM']
+counts = [704, 396, 174, 1]
+
+st.title("GPU Company Distribution (John Larence Lusaya)")
+
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.pie(counts, labels=gpu_companies, autopct='%1.1f%%', startangle=140)
+ax.set_title('GPU Company Distribution')
+ax.axis('equal')
+
 st.pyplot(fig)
