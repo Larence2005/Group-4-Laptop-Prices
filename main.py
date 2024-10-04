@@ -82,7 +82,7 @@ st.altair_chart(chart, use_container_width=True)
 
 #CPU_Company Pie Graph (SOPHIA VITUG)
 # Create a title for the app
-st.title("CPU Company Distribution")
+st.title("CPU Company Distribution Pie Graph")
 st.write("This pie graph illustrates that Intel dominates with a significant market share, accounting for 95.5% of CPUs (1,214 units). AMD follows with 4.7% (60 units), while Samsung represents a negligible portion with only 1 unit, making up less than 0.1%. Upon observing this pie graph, it suggests that Intel is the dominant brand for CPU in laptops, with AMD having a minor but noticeable presence, and Samsung being almost nonexistent.")
 
 # DATA
@@ -115,6 +115,35 @@ label_type = st.selectbox("Choose label type:", ["Percentage", "Count"])
 fig = create_pie_chart(labels, sizes, label_type.lower())
 st.pyplot(fig)
 
+# Create a title for the app
+st.title("CPU Type Bar Graph")
+st.write("This bar graph indicates the most popular CPU type, with 193 occurrences, followed by the Core i7 7700HQ and Core i7 7500U, which have 147 and 133 counts, respectively. After the top three, the frequency drops significantly, with the Core i3 6066U and Core i7 8550U being fairly common but in smaller quantities. Furthermore, rare CPU types appear only once, such as M3-6Y30, A6-Series 7310, and others, which indicates that these types are less frequently used in laptops.")
+
+# Prepare the data
+cpu_types = ['Core i5 7200U', 'Core i7 7700HQ', 'Core i7 7500u', 'Core i3 6006U','Core i7 8550U',
+             'Core M m3', 'E-Series E2-9000', 'Core M M3-6Y30', 'A6-Series 7310', 'A9-Series 9410']
+counts = [193, 147, 133, 81, 73, 1, 1, 1, 1, 1]
+
+df = pd.DataFrame({'CPU Type': cpu_types, 'Count': counts})
+
+# Sort the dataframe by count in descending order
+df = df.sort_values('Count', ascending=False)
+
+# Create Altair chart
+chart = alt.Chart(df).mark_bar().encode(
+    x=alt.X('Count', axis=alt.Axis(title='Count')),
+    y=alt.Y('CPU Type', sort='-x', axis=alt.Axis(title='CPU Type'))
+)
+
+# Customize chart appearance
+chart = chart.properties(
+    title='CPU Types and Their Counts',
+    width=800,
+    height=600
+)
+
+# Display the chart
+st.altair_chart(chart)
 
 
 # CPU Frequency Bar Graph (JOHN LARENCE LUSAYA)
