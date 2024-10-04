@@ -296,4 +296,4 @@ with col2:
 with col3:
     st.write('© Group 4 - BM3 | 2024. All rights reserved.')
     st.write('Mapua University - Makati')
-    )
+    
