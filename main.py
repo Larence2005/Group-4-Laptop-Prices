@@ -39,7 +39,7 @@ company
 #Screen Resolution Bar Graph (SOPHIA VITUG)
 
 # Create a title for the app
-st.title("Screen Resolution Distribution in Laptops")
+st.title("Screen Resolution Distribution in Laptops Bar Graph")
 st.write("The findings indicate that Full HD 1920x1080 is the most prevalent screen resolution among laptops, accounting for 505 units and greatly exceeding other resolutions. In contrast bold text, and higher-end resolutions including IPS Panel Full HD 1920x1200 and IPS Panel Touchscreen 2400x1600 are less prevalent because they have 1 unit compared to Full HD 1920-1080. Overall, this bar chart highlights that Full HD screens are the most prevalent in modern laptops while higher resolutions are rare.")
 
 # DATA
