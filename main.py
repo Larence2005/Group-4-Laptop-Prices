@@ -294,7 +294,7 @@ with col2:
     )
 
 with col3:
-    st.write('')
+    st.markdown("### Details")
     st.markdown(
         """
         <p>© GROUP 4 - BM3</p>
