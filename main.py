@@ -255,8 +255,7 @@ st.write('')
 st.write('')
 st.write('')
 
-
-st.markdown('<hr style="border:1px solid gray">', unsafe_allow_html=True)
+st.markdown('<hr style="border:2px solid gray">', unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
@@ -264,9 +263,11 @@ with col1:
     st.markdown("### Contributors")
     st.markdown(
         """
-        - <a href="https://github.com/Larence2005" style="text-decoration:none; color:white;">John Larence Lusaya</a>  
-        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:white;">Edelle Lumabi</a>  
-        - <a href="https://github.com/sophiavitug10" style="text-decoration:none; color:white;">Sophia Vitug</a>
+        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:blue;">Edelle Lumabi</a>
+        - <a href="https://github.com/Larence2005" style="text-decoration:none; color:blue;">John Larence Lusaya</a> 
+        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:blue;">Nicholas Rian Pastiu</a>
+        - <a href="https://github.com/edelle-del" style="text-decoration:none; color:blue;">Daniel Santillan</a>
+        - <a href="https://github.com/sophiavitug10" style="text-decoration:none; color:blue;">Sophia Vitug</a>
         """, 
         unsafe_allow_html=True
     )
@@ -275,7 +276,7 @@ with col2:
     st.markdown("### Main Repository")
     st.markdown(
         """
-        • <a href="https://github.com/Larence2005/Group-4-Laptop-Prices" style="text-decoration:none; color:white;">View on GitHub</a>
+        - <a href="https://github.com/Larence2005/Group-4-Laptop-Prices" style="text-decoration:none; color:blue;">View on GitHub</a>
         """, 
         unsafe_allow_html=True
     )
