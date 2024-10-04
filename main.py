@@ -36,6 +36,7 @@ desc
 company = df['Company'].value_counts()
 company
 st.write('')
+st.write('')
 
 #Screen Resolution Bar Graph (SOPHIA VITUG)
 
@@ -81,6 +82,7 @@ chart = alt.Chart(df).mark_bar().encode(
 # Display the chart
 st.altair_chart(chart, use_container_width=True)
 st.write('')
+st.write('')
 
 
 #CPU_Company Pie Graph (SOPHIA VITUG)
@@ -118,6 +120,7 @@ label_type = st.selectbox("Choose label type:", ["Percentage", "Count"])
 fig = create_pie_chart(labels, sizes, label_type.lower())
 st.pyplot(fig)
 st.write('')
+st.write('')
 
 
 # Create a title for the app
@@ -148,6 +151,7 @@ chart = chart.properties(
 )
 
 st.altair_chart(chart)
+st.write('')
 st.write('')
 
 
@@ -185,7 +189,7 @@ plt.subplots_adjust(bottom=0.15)
 
 st.pyplot(fig)
 st.write('')
-
+st.write('')
 
 
 #GPU Company Pie Graph (JOHN LARENCE LUSAYA)
@@ -202,3 +206,5 @@ ax.axis('equal')
 
 st.pyplot(fig)
 st.write('')
+st.write('')
+
