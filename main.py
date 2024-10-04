@@ -186,7 +186,7 @@ st.pyplot(fig)
 gpu_companies = ['Intel', 'Nvidia', 'AMD', 'ARM']
 counts = [704, 396, 174, 1]
 
-st.title("GPU Company Distribution (John Larence Lusaya)")
+st.title("GPU Company Distribution")
 
 fig, ax = plt.subplots(figsize=(8, 6))
 ax.pie(counts, labels=gpu_companies, autopct='%1.1f%%', startangle=140)
