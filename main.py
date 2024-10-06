@@ -67,46 +67,12 @@ st.write('')
 #title top products
 st.title("Top 20 Products by Count")
 st.write("Among all the brands, the **XPS 13** from Dell takes on the lead as the most sold item based on the data provided.")
-data = {
-    'Product': [
-        'XPS 13', 'Inspiron 3567', '250 G6', 'Vostro 3568', 'Legion Y520-15/KBN',
-        'ProBook 450', 'Inspiron 5570', 'Alienware 17', 'Inspiron 5570', 
-        'Satellite Pro', 'EliteBook 580', 'Aspire 3', 'ThinkPad X1', 
-        'Inspiron 7567', 'MacBook Pro', 'EliteBook 850', 'EliteBook 820',
-        'XPS 15', 'IdeaPad 320-15/KBN'
-    ],
-    'Count': [
-        30, 27, 20, 18, 16, 15, 14, 12, 12, 10,
-        9, 9, 8, 8, 7, 7, 6, 6, 5, 5
-    ]
-}
-
-df = pd.DataFrame(data)
 
 
 # Title  TypeName
 st.title("TypeName Pie Graph (Daniel Santillan)")
 st.write("From the pie chart, we see that Notebook is the most advertised name for general consumers (55.5%) and Gaming for specific consumers (16.1%).")
-data = {
-    'TypeName': [
-        'Laptop', 'Desktop', 'Tablet', 'Laptop', 'Desktop', 
-        'Laptop', 'Laptop', 'Tablet', 'Desktop', 'Laptop'
-    ]
-}
-df = pd.DataFrame(data)  
 
-# Title of the Streamlit app
-st.title("TypeName Distribution")
-
-# Creating the pie chart
-fig, ax = plt.subplots(figsize=(8, 8))
-ax.pie(df['TypeName'].value_counts(), 
-       labels=df['TypeName'].value_counts().index, 
-       autopct='%1.1f%%')
-ax.set_title('TypeName Distribution')
-
-# Displaying the chart in Streamlit
-st.pyplot(fig)
 
 
 
