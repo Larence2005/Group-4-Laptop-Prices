@@ -67,33 +67,11 @@ st.write('')
 
 st.title("Top 20 Products by Count")
 st.write("Among all the brands, the **XPS 13** from Dell takes on the lead as the most sold item based on the data provided.")
-top_products = df['Product'].value_counts().head(20).reset_index()
-top_products.columns = ['Product', 'count']
 
-unique_products = top_products['Product'].unique()
-colors = sns.color_palette("Set3", len(unique_products))
-
-fig, ax = plt.subplots(figsize=(8, 6))
-sns.barplot(data=top_products, x='Product', y='count', ax=ax, palette=colors)
-ax.set_title('Top 20 Products by Count')
-ax.set_xlabel('Product')
-ax.set_ylabel('Count')
-plt.xticks(rotation=70, ha='right')
-
-st.pyplot(fig)
-st.write('')
-st.write('')
 
 # Title of the Streamlit app
 st.title("TypeName Pie Graph (Daniel Santillan)")
 st.write("From the pie chart, we see that Notebook is the most advertised name for general consumers (55.5%) and Gaming for specific consumers (16.1%).")
-# Creating the pie chart
-fig, ax = plt.subplots(figsize=(8, 8))
-ax.pie(df['TypeName'].value_counts(), labels=df['TypeName'].value_counts().index, autopct='%1.1f%%')
-ax.set_title('TypeName Distribution')
-
-# Displaying the chart in Streamlit
-st.pyplot(fig)
 
 
 #Screen Resolution Bar Graph (SOPHIA VITUG)
