@@ -58,7 +58,7 @@ sns.barplot(x=company_data["Company"], y=company_data["Count"], color='blue')  #
 plt.title('Distribution of Laptop Companies')
 plt.xlabel('Company')
 plt.ylabel('Count')
-plt.xticks(rotation=30)
+plt.xticks(rotation=100)
 
 # Show the plot in Streamlit
 st.pyplot(plt)
@@ -301,8 +301,6 @@ st.write('')
 # Create and display the bar chart
 st.title("Memory Distribution")
 st.write("Based from the graph, most laptops have a 256GB SSD memory followed by a 1TB HDD memory.")
-st.title("Memory Count Distribution")
-st.write("This chart displays the count of different memory configurations.")
 
 # Data preparation (using existing data array)
 memory_data = {
@@ -337,7 +335,7 @@ sns.barplot(x=memory_data["Memory"], y=memory_data["Count"], color='blue')  # Us
 plt.title('Memory Distribution')
 plt.xlabel('Memory (GB)')
 plt.ylabel('Number of Laptops')
-plt.xticks(rotation=90)
+plt.xticks(rotation=95)
 st.pyplot(plt)
 st.write('')
 st.write('')
