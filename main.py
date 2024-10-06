@@ -242,7 +242,7 @@ st.write('')
 st.write('')
 
 #RAM GB - EDELLE LUMABI
-RAM: [8, 4, 16, 6, 12, 32, 2, 24, 64],
+RAM: [8, 4, 16, 6, 12, 32, 2, 24, 64]
 count: [613, 367, 198, 35, 25, 17, 16, 3, 1]
 
 df = pd.DataFrame(data)
