@@ -242,18 +242,24 @@ st.write('')
 st.write('')
 
 #RAM GB - EDELLE LUMABI
-RAM: [8, 4, 16, 6, 12, 32, 2, 24, 64]
-count: [613, 367, 198, 35, 25, 17, 16, 3, 1]
+# Data
+RAM = [8, 4, 16, 6, 12, 32, 2, 24, 64]
+count = [613, 367, 198, 35, 25, 17, 16, 3, 1]
 
+# Create a DataFrame
+data = {'RAM (GB)': RAM, 'Count': count}
 df = pd.DataFrame(data)
 
+# Streamlit Title
 st.title('RAM (GB) Distribution')
-st.write("The histogram above indicates that most laptops only have **8GB of RAM**. The graph is skewed to the right which means there are less laptops who use larger sizes of RAM. It can also be observed that most laptops only have RAM sizes that range from **0 - 16 GB.**")
+
+# Description
+st.write("The histogram above indicates that most laptops only have *8GB of RAM*. The graph is skewed to the right which means there are fewer laptops with larger sizes of RAM. It can also be observed that most laptops only have RAM sizes that range from *0 - 16 GB.*")
 st.write('')
 
 # Create the plot
 fig, ax = plt.subplots(figsize=(10, 8))
-sns.histplot(RAM, count, color='green', ax=ax)
+sns.barplot(x='RAM (GB)', y='Count', data=df, color='green', ax=ax)
 ax.set_title('RAM (GB) Distribution')
 ax.set_xlabel('RAM (GB)')
 ax.set_ylabel('Frequency')
