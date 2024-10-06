@@ -346,7 +346,8 @@ def cpu_freq_vs_price_bar_chart(df):
     
     # Display the plot in Streamlit
     st.pyplot(fig)
-
+  
+  cpu_freq_vs_price_bar_chart(df)
 
 
 #=====================================THIS IS A FOOTER=====================================
