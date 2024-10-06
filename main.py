@@ -275,7 +275,7 @@ with col1:
         - <a href="https://github.com/edelle-del" style="text-decoration:none;">Edelle Lumabi</a>
         - <a href="https://github.com/Larence2005" style="text-decoration:none;">John Larence Lusaya</a> 
         - <a href="https://github.com/edelle-del" style="text-decoration:none;">Nicholas Rian Pastiu</a>
-        - <a href="https://github.com/edelle-del" style="text-decoration:none;">Daniel Santillan</a>
+        - <a href="https://github.com/zxeki" style="text-decoration:none;">Daniel Santillan</a>
         - <a href="https://github.com/sophiavitug10" style="text-decoration:none;">Sophia Vitug</a>
         """, 
         unsafe_allow_html=True
