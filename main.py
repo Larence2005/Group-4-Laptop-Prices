@@ -67,7 +67,6 @@ st.write('')
 
 
 #Products BAR GRAPH (Daniel Santillan)
-df = pd.read_csv('laptop_price - dataset.csv')
 
 # For demonstration, I'll create a sample DataFrame. Remove this and load your actual data.
 data = {'Product': ['Product A', 'Product B', 'Product C', 'Product D', 'Product E'] * 10}
