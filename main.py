@@ -34,11 +34,17 @@ sum
 
 desc = df.describe()
 desc
+st.write('')
+st.write('')
+st.write('')
+
 
 
 #daniel santillan
 st.title("Distribution of Laptop Companies")
 st.write("It can be seen that Asus and Dell takes on the lead followed up by HP.")
+st.write('')
+
 
 company_data = {
     "Company": [
@@ -52,7 +58,6 @@ company_data = {
     ]
 }
 
-# Set up the matplotlib figure
 plt.figure(figsize=(8, 6))
 sns.barplot(x=company_data["Company"], y=company_data["Count"], color='blue')  # Use barplot for categorical data
 plt.title('Distribution of Laptop Companies')
@@ -64,6 +69,8 @@ plt.xticks(rotation=80)
 st.pyplot(plt)
 st.write('')
 st.write('')
+st.write('')
+
 
 
 #Products BAR GRAPH (Daniel Santillan)
@@ -71,12 +78,13 @@ df['Product'].value_counts()
 # Streamlit application
 st.title('Top 20 Products')
 st.write('Among all the brands, the XPS 13 from Dell takes on the lead as the most sold item based on the data provided.')
+st.write('')
+
 
 # Calculate top products
 top_products = df['Product'].value_counts().head(20).reset_index()
 top_products.columns = ['Product', 'Count']
 
-# Plotting
 plt.figure(figsize=(8, 6))
 sns.barplot(data=top_products, x='Product', y='Count')
 plt.title('Top 20 Products by Count')
@@ -84,13 +92,13 @@ plt.xlabel('Product')
 plt.ylabel('Count')
 plt.xticks(rotation=70, ha='right')
 
-# Show the plot in Streamlit
 st.pyplot(plt)
 
 # Optional: Add a button to refresh the data or re-run the analysis
 if st.button('Refresh Data'):
     st.experimental_rerun()
 
+st.write('')
 st.write('')
 st.write('')
 
@@ -100,23 +108,24 @@ df['Product'].value_counts()
 # Streamlit application
 st.title('TypeName Distribution Pie Chart')
 st.write('From the pie chart, we see that Notebook is the most advertised name for general consumers (55.5%) and Gaming for specific consumers (16.1%).')
+st.write('')
+
 
 # Calculate TypeName distribution
 type_counts = df['TypeName'].value_counts()
 
-# Plotting
 plt.figure(figsize=(8, 8))
 plt.pie(type_counts, labels=type_counts.index, autopct='%1.1f%%')
 plt.title('TypeName Distribution')
 
-# Show the plot in Streamlit
 st.pyplot(plt)
+st.write('')
+st.write('')
+st.write('')
 
 
 
 #Screen Resolution Bar Graph (SOPHIA VITUG)
-
-# Create a title for the app
 st.title("Screen Resolution Distribution in Laptops Bar Graph")
 st.write("The findings indicate that Full HD 1920x1080 is the most prevalent screen resolution among laptops, accounting for 505 units and greatly exceeding other resolutions. In contrast bold text, and higher-end resolutions including IPS Panel Full HD 1920x1200 and IPS Panel Touchscreen 2400x1600 are less prevalent because they have 1 unit compared to Full HD 1920-1080. Overall, this bar chart highlights that Full HD screens are the most prevalent in modern laptops while higher resolutions are rare.")
 st.write('')
@@ -143,7 +152,6 @@ data = {
     ]
 }
 
-# Create DataFrame
 df = pd.DataFrame(data)
 
 # Sort the dataframe
@@ -155,8 +163,8 @@ chart = alt.Chart(df).mark_bar().encode(
     y=alt.Y('ScreenResolution', sort='-x')
 )
 
-# Display the chart
 st.altair_chart(chart, use_container_width=True)
+st.write('')
 st.write('')
 st.write('')
 
@@ -193,18 +201,18 @@ sizes = cpu_counts.values.tolist()
 # User input for label type
 label_type = st.selectbox("Choose label type:", ["Percentage", "Count"])
 
-# Create and display the pie chart
 fig = create_pie_chart(labels, sizes, label_type.lower())
 st.pyplot(fig)
 st.write('')
 st.write('')
+st.write('')
 
 
-# Create a title for the app
+
 st.title("CPU Type Bar Graph")
 st.write("This bar graph indicates the most popular CPU type, with 193 occurrences, followed by the Core i7 7700HQ and Core i7 7500U, which have 147 and 133 counts, respectively. After the top three, the frequency drops significantly, with the Core i3 6066U and Core i7 8550U being fairly common but in smaller quantities. Furthermore, rare CPU types appear only once, such as M3-6Y30, A6-Series 7310, and others, which indicates that these types are less frequently used in laptops.")
 st.write('')
-# Prepare the data
+
 cpu_types = ['Core i5 7200U', 'Core i7 7700HQ', 'Core i7 7500u', 'Core i3 6006U','Core i7 8550U',
              'Core M m3', 'E-Series E2-9000', 'Core M M3-6Y30', 'A6-Series 7310', 'A9-Series 9410']
 counts = [193, 147, 133, 81, 73, 1, 1, 1, 1, 1]
@@ -230,6 +238,8 @@ chart = chart.properties(
 st.altair_chart(chart)
 st.write('')
 st.write('')
+st.write('')
+
 
 
 # CPU Frequency Bar Graph (JOHN LARENCE LUSAYA)
@@ -266,6 +276,8 @@ plt.subplots_adjust(bottom=0.15)
 st.pyplot(fig)
 st.write('')
 st.write('')
+st.write('')
+
 
 
 #GPU Company Pie Graph (JOHN LARENCE LUSAYA)
@@ -283,6 +295,9 @@ ax.axis('equal')
 st.pyplot(fig)
 st.write('')
 st.write('')
+st.write('')
+
+
 
 #GPU Type Bar Graph (JOHN LARENCE LUSAYA)
 gpus = [
@@ -314,6 +329,9 @@ plt.tight_layout()
 st.pyplot(fig)
 st.write('')
 st.write('')
+st.write('')
+
+
 
 #RAM GB - EDELLE LUMABI
 # Data
@@ -324,10 +342,7 @@ count = [613, 367, 198, 35, 25, 17, 16, 3, 1]
 data = {'RAM (GB)': RAM, 'Count': count}
 df = pd.DataFrame(data)
 
-# Streamlit Title
 st.title('RAM (GB) Distribution')
-
-# Description
 st.write("The histogram above indicates that most laptops only have *8GB of RAM*. The graph is skewed to the right which means there are fewer laptops with larger sizes of RAM. It can also be observed that most laptops only have RAM sizes that range from *0 - 16 GB.*")
 st.write('')
 
@@ -338,19 +353,19 @@ ax.set_title('RAM (GB) Distribution')
 ax.set_xlabel('RAM (GB)')
 ax.set_ylabel('Frequency')
 
-# Display the plot
 st.pyplot(fig)
+st.write('')
 st.write('')
 st.write('')
 
 
 
 #MEMORY - EDELLE LUMABI
-# Create and display the bar chart
 st.title("Memory Distribution")
 st.write("Based from the graph, most laptops have a 256GB SSD memory followed by a 1TB HDD memory.")
+st.write('')
 
-# Data preparation (using existing data array)
+
 memory_data = {
     "Memory": [
         "256GB SSD", "1TB HDD", "500GB HDD", "512GB SSD", "128GB SSD + 1TB HDD",
@@ -377,9 +392,8 @@ memory_data = {
     ]
 }
 
-# Set up the matplotlib figure
 plt.figure(figsize=(10, 8))
-sns.barplot(x=memory_data["Memory"], y=memory_data["Count"], color='blue')  # Use barplot for categorical data
+sns.barplot(x=memory_data["Memory"], y=memory_data["Count"], color='blue')
 plt.title('Memory Distribution')
 plt.xlabel('Memory (GB)')
 plt.ylabel('Number of Laptops')
@@ -387,8 +401,7 @@ plt.xticks(rotation=90)
 st.pyplot(plt)
 st.write('')
 st.write('')
-
-
+st.write('')
 
 
 
@@ -400,16 +413,13 @@ os = [
 ]
 counts = [1048, 66, 58, 45, 27, 13, 8, 8, 2]
 
-# Create a DataFrame
 df = pd.DataFrame({'Operating System': os, 'Count': counts})
 
-# Streamlit Title
 st.title('Operating System Distribution')
-
-# Description
 st.write('Based from the graph below, the operating system or OS used by most laptops is **Windows 10** and some laptops have no OS at all. There are only a few who use MacOS and Android OS.')
+st.write('')
 
-# Create the plot
+
 fig, ax = plt.subplots(figsize=(10, 8))
 ax.bar(df['Operating System'], df['Count'], color='purple')
 ax.set_title('Operating Systems')
@@ -417,15 +427,12 @@ ax.set_xlabel('Operating System')
 ax.set_ylabel('Count')
 ax.set_xticklabels(df['Operating System'], rotation=40)
 
-# Adjust layout to avoid overlap
 plt.tight_layout()
-
-# Display the plot in Streamlit
 st.pyplot(fig)
+st.write('')
+st.write('')
+st.write('')
 
-# Optional blank space
-st.write('')
-st.write('')
 
 
 #CPU FREQ VS PRICE - NICK
@@ -442,29 +449,38 @@ def cpu_freq_vs_price_bar_chart(df):
 
 st.title("CPU Frequency vs Price Bar Chart")
 st.write('The graph above shows that as a the laptop with the CPU Frequency (GHz) of 3.1GHz is the most expensive one. However, it does not necessarily mean that if the CPU Frequency (GHz) of a laptop increases, the price also increases. This is because there are other factors such as brand, additional features, or specific model configurations that can be considered')
+st.write('')
 cpu_freq_vs_price_bar_chart(df)
 st.write('')
 st.write('')
-
+st.write('')
 
 
 def load_data():
-    # Replace this with your actual data loading method
     df = pd.read_csv('laptop_price - dataset.csv')
     return df
 
 df = load_data()
 
-# TypeName vs Price chart
-st.header('TypeName vs. Price (Euro)')
+# TypeName vs Price chart - NICK
+st.title('TypeName vs. Price (Euro)')
+st.write('The graph shows that Workstation laptops are the most expensive types of laptops compared to the other 5 types.')
+st.write('')
 fig, ax = plt.subplots(figsize=(12, 6))
 sns.barplot(x='TypeName', y='Price (Euro)', data=df, color='lime', ax=ax)
 plt.xticks(rotation=45)
 plt.title('TypeName vs. Price (Euro)')
 st.pyplot(fig)
+st.write('')
+st.write('')
+st.write('')
 
-# OpSys vs Price chart
-st.header('OpSys vs. Price (Euro)')
+
+
+# OpSys vs Price chart - NICK 
+st.title('OpSys vs. Price (Euro)')
+st.write('In the graph above, it can be determined that the operating system that is the most expensive is the macOS with an average price of 1,750 Euros.')
+st.write('')
 fig, ax = plt.subplots(figsize=(12, 6))
 sns.barplot(x='OpSys', y='Price (Euro)', data=df, color='teal', ax=ax)
 plt.xticks(rotation=45)
