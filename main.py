@@ -35,59 +35,47 @@ sum
 desc = df.describe()
 desc
 
-
-st.write("")
-st.write("")
-
-#daniel santillan
+"# Laptop Companies" #daniel santillan
 data = {'Company': ['Dell', 'Apple', 'HP', 'Dell', 'Apple', 'Asus', 'Dell', 'HP', 'Apple']}
 df = pd.DataFrame(data)
 
-# Title of the Streamlit app
 st.title("Distribution of Laptop Companies")
 
-# Creating the count plot
+unique_companies = df['Company'].unique()
+colors = sns.color_palette("husl", len(unique_companies))
+
 fig, ax = plt.subplots(figsize=(8, 6))
-sns.countplot(data=df, x='Company', ax=ax)
+sns.countplot(data=df, x='Company', ax=ax, palette=colors)
 ax.set_title('Distribution of Laptop Companies')
 ax.set_xlabel('Company')
 ax.set_ylabel('Count')
 plt.xticks(rotation=45)
 
-# Displaying the chart in Streamlit
 st.pyplot(fig)
-st.write("")
-st.write("")
 
-
-
-
-#daniel santillan
-data = {'Product': ['Product1', 'Product2', 'Product3', 'Product1', 'Product2', 'Product1']*10}
+"# Products" #daniel santillan
+data = {'Product': ['Product1', 'Product2', 'Product3', 'Product1', 'Product2', 'Product1'] * 10}
 df = pd.DataFrame(data)
 
-# Title of the Streamlit app
 st.title("Top 20 Products by Count")
 
-# Getting the top 20 products by count
 top_products = df['Product'].value_counts().head(20).reset_index()
 top_products.columns = ['Product', 'count']
 
-# Creating the bar plot
+unique_products = top_products['Product'].unique()
+colors = sns.color_palette("Set3", len(unique_products))
+
 fig, ax = plt.subplots(figsize=(8, 6))
-sns.barplot(data=top_products, x='Product', y='count', ax=ax)
+sns.barplot(data=top_products, x='Product', y='count', ax=ax, palette=colors)
 ax.set_title('Top 20 Products by Count')
 ax.set_xlabel('Product')
 ax.set_ylabel('Count')
 plt.xticks(rotation=70, ha='right')
 
-# Displaying the chart in Streamlit
 st.pyplot(fig)
-st.write("")
-st.write("")
 
 
-#daniel santillan
+"# TypeName" #daniel santillan
 
 data = {'TypeName': ['A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'A', 'C']}
 df = pd.DataFrame(data)
