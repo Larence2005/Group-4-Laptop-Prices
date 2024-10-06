@@ -97,10 +97,19 @@ st.write('')
 
 
 df['Product'].value_counts()
+# Streamlit application
+st.title('TypeName Distribution Pie Chart')
+
+# Calculate TypeName distribution
+type_counts = df['TypeName'].value_counts()
+
+# Plotting
 plt.figure(figsize=(8, 8))
-plt.pie(df['TypeName'].value_counts(), labels=df['TypeName'].value_counts().index, autopct='%1.1f%%')
+plt.pie(type_counts, labels=type_counts.index, autopct='%1.1f%%')
 plt.title('TypeName Distribution')
-plt.show()
+
+# Show the plot in Streamlit
+st.pyplot(plt)
 
 
 
