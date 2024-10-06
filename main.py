@@ -35,7 +35,11 @@ sum
 desc = df.describe()
 desc
 
-"# Laptop Companies" #daniel santillan
+
+st.write("")
+st.write("")
+
+#daniel santillan
 data = {'Company': ['Dell', 'Apple', 'HP', 'Dell', 'Apple', 'Asus', 'Dell', 'HP', 'Apple']}
 df = pd.DataFrame(data)
 
@@ -52,7 +56,13 @@ plt.xticks(rotation=45)
 
 # Displaying the chart in Streamlit
 st.pyplot(fig)
-"# Products" #daniel santillan
+st.write("")
+st.write("")
+
+
+
+
+#daniel santillan
 data = {'Product': ['Product1', 'Product2', 'Product3', 'Product1', 'Product2', 'Product1']*10}
 df = pd.DataFrame(data)
 
@@ -73,7 +83,11 @@ plt.xticks(rotation=70, ha='right')
 
 # Displaying the chart in Streamlit
 st.pyplot(fig)
-"# TypeName" #daniel santillan
+st.write("")
+st.write("")
+
+
+#daniel santillan
 
 data = {'TypeName': ['A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'A', 'C']}
 df = pd.DataFrame(data)
