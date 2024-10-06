@@ -71,8 +71,6 @@ st.title("Top 20 Products by Count")
 st.write("Among all the brands, the **XPS 13** from Dell takes on the lead as the most sold item based on the data provided.")
 
 
-
-
 # Title  TypeName
 st.title("TypeName Pie Graph (Daniel Santillan)")
 st.write("From the pie chart, we see that Notebook is the most advertised name for general consumers (55.5%) and Gaming for specific consumers (16.1%).")
