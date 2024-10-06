@@ -67,10 +67,10 @@ st.write('')
 
 
 #Products BAR GRAPH (Daniel Santillan)
-
 df['Product'].value_counts()
 # Streamlit application
-st.title('Top Products Bar Graph')
+st.title('Top 20 Products')
+st.write('Among all the brands, the XPS 13 from Dell takes on the lead as the most sold item based on the data provided.')
 
 # Calculate top products
 top_products = df['Product'].value_counts().head(20).reset_index()
@@ -90,6 +90,9 @@ st.pyplot(plt)
 # Optional: Add a button to refresh the data or re-run the analysis
 if st.button('Refresh Data'):
     st.experimental_rerun()
+
+st.write('')
+st.write('')
 
 
 
@@ -215,16 +218,7 @@ st.write('')
 st.title('CPU Frequency Bar Graph')
 st.write('The data indicates a strong preference for CPUs in the 2.00 GHz to 2.90 GHz range, highlighting consumer demand trends and market availability. CPUs with lower frequencies are less frequently found.')
 st.write('')
-data = {
-    "CPU_Frequency (GHz)": [2.50, 2.80, 2.70, 1.60, 2.30, 2.00, 1.80, 2.60, 1.10, 2.40,
-                            2.90, 3.00, 1.20, 1.44, 2.20, 1.50, 1.30, 3.60, 3.10, 2.10,
-                            1.90, 0.90, 3.20, 1.00, 1.92],
-    "count": [285, 165, 164, 124, 86, 86, 78, 74, 53, 50,
-              19, 19, 15, 12, 11, 10, 6, 5, 3, 3,
-              2, 2, 1, 1, 1]
-}
-df = pd.DataFrame(data)
-
+df['Product'].value_counts()
 cpu_frequency = df["CPU_Frequency (GHz)"].values
 count = df["count"].values
 x = np.arange(len(cpu_frequency))
