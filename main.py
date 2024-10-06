@@ -96,6 +96,14 @@ st.write('')
 
 
 
+df['Product'].value_counts()
+plt.figure(figsize=(8, 8))
+plt.pie(df['TypeName'].value_counts(), labels=df['TypeName'].value_counts().index, autopct='%1.1f%%')
+plt.title('TypeName Distribution')
+plt.show()
+
+
+
 #Screen Resolution Bar Graph (SOPHIA VITUG)
 
 # Create a title for the app
