@@ -333,6 +333,22 @@ st.write('')
 st.write('')
 
 
+
+def cpu_freq_vs_price_bar_chart(df):
+    fig, ax = plt.subplots()
+    sns.barplot(x=df['CPU_Frequency (GHz)'], y=df['Price (Euro)'], color='magenta', ax=ax)
+    
+    # Rotate x-axis labels for better readability
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=80)
+    
+    # Set title
+    ax.set_title('CPU Frequency (GHz) vs. Price (Euro)')
+    
+    # Display the plot in Streamlit
+    st.pyplot(fig)
+
+
+
 #=====================================THIS IS A FOOTER=====================================
 st.write('')
 st.write('')
