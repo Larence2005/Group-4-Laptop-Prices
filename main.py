@@ -301,6 +301,8 @@ st.write('')
 # Create and display the bar chart
 st.title("Memory Distribution")
 st.write("Based from the graph, most laptops have a 256GB SSD memory followed by a 1TB HDD memory.")
+st.title("Memory Count Distribution")
+st.write("This chart displays the count of different memory configurations.")
 
 # Data preparation (using existing data array)
 memory_data = {
@@ -336,11 +338,13 @@ plt.title('Memory Distribution')
 plt.xlabel('Memory (GB)')
 plt.ylabel('Number of Laptops')
 plt.xticks(rotation=90)
-
-# Show the plot in Streamlit
 st.pyplot(plt)
 st.write('')
 st.write('')
+
+
+
+
 
 #OPSYS - EDELLE
 os = [
