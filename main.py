@@ -448,36 +448,34 @@ st.write('')
 
 
 
-# Display the column names to confirm
-st.write("Columns in the DataFrame:", df.columns)
+# Display the value counts of 'OpSys' and 'Price (Euro)'
+st.subheader('Operating System Distribution')
+st.write(df['OpSys'].value_counts())
 
-# TypeName and Price (Euro)
+st.subheader('Price (Euro) Distribution')
+st.write(df['Price (Euro)'].value_counts())
+
+# Function to display TypeName vs. Price (Euro) bar chart
 def typename_vs_price_bar_chart(df):
-    if 'TypeName' in df.columns and 'Price (Euro)' in df.columns:
-        sns.barplot(x=df['TypeName'], y=df['Price (Euro)'], color='lime')
-        plt.xticks(rotation=45)
-        plt.title('TypeName vs. Price (Euro)')
-        st.pyplot(plt.gcf())  # Display the chart in Streamlit
-    else:
-        st.error("Error: 'TypeName' or 'Price (Euro)' column not found")
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x=df['TypeName'], y=df['Price (Euro)'], color='lime')
+    plt.xticks(rotation=45)
+    plt.title('TypeName vs. Price (Euro)')
+    st.pyplot(plt)  # Display plot in Streamlit
 
-# OpSys and Price (Euro)
+# Function to display OpSys vs. Price (Euro) bar chart
 def op_sys_vs_price_bar_chart(df):
-    if 'OpSys' in df.columns and 'Price (Euro)' in df.columns:
-        sns.barplot(x=df['OpSys'], y=df['Price (Euro)'], color='teal')
-        plt.xticks(rotation=45)
-        plt.title('OpSys & Price (Euro)')
-        st.pyplot(plt.gcf())  # Display the chart in Streamlit
-    else:
-        st.error("Error: 'OpSys' or 'Price (Euro)' column not found")
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x=df['OpSys'], y=df['Price (Euro)'], color='teal')
+    plt.xticks(rotation=45)
+    plt.title('OpSys & Price (Euro)')
+    st.pyplot(plt)  # Display plot in Streamlit
 
-# Streamlit App
-st.title('Laptop Data Visualizations')
-
-st.header('TypeName vs. Price (Euro)')
+# Display the charts
+st.subheader('TypeName vs. Price (Euro)')
 typename_vs_price_bar_chart(df)
 
-st.header('OpSys vs. Price (Euro)')
+st.subheader('OpSys vs. Price (Euro)')
 op_sys_vs_price_bar_chart(df)
 
 
