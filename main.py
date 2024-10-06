@@ -455,16 +455,6 @@ def load_data():
 
 df = load_data()
 
-st.title('Laptop Analysis Dashboard')
-
-# Display value counts
-st.header('Value Counts')
-st.subheader('Operating System Distribution')
-st.write(df['OpSys'].value_counts())
-
-st.subheader('Price Distribution')
-st.write(df['Price (Euro)'].value_counts())
-
 # TypeName vs Price chart
 st.header('TypeName vs. Price (Euro)')
 fig, ax = plt.subplots(figsize=(12, 6))
