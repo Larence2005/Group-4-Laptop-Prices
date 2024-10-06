@@ -429,7 +429,6 @@ st.write('')
 
 
 #CPU FREQ VS PRICE - NICK
-
 data = {'CPU_Frequency (GHz)': [2.4, 3.1, 2.8, 3.6, 4.0],
         'Price (Euro)': [200, 350, 300, 450, 500]}
 df = pd.DataFrame(data)
@@ -447,24 +446,32 @@ cpu_freq_vs_price_bar_chart(df)
 st.write('')
 st.write('')
 
+
+
 #TypeName and Price(Euro) (Nicholas Pastiu)
-df['Product'].value_counts()
+df['Price (Euro)'].value_counts()
+df['TypeName'].value_counts()
+
 def typename_vs_price_bar_chart(df):
-    fig, ax = plt.subplots()
-    sns.barplot(x=df['TypeName'], y=df['Price (Euro)'], color='lime', ax=ax)
-    ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
-    ax.set_title('TypeName vs. Price (Euro)')
-    st.pyplot(fig)
 
-# Function to plot OpSys vs Price (Euro)
+  sns.barplot(x = df['TypeName'], y = df['Price (Euro)'], color = 'lime')
+  plt.xticks(rotation=45)
+  plt.title('TypeName vs. Price (Euro)')
+  plt.show()
+
+typename_vs_price_bar_chart(df)
+
+
+df['OpSys'].value_counts()
+df['Price (Euro)'].value_counts()
+#OpSys and Price (Euro) (Nicholas Pastiu)
 def op_sys_vs_price_bar_chart(df):
-    fig, ax = plt.subplots()
-    sns.barplot(x=df['OpSys'], y=df['Price (Euro)'], color='teal', ax=ax)
-    ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
-    ax.set_title('OpSys vs. Price (Euro)')
-    st.pyplot(fig)
 
-# Display charts in Streamlit
+  sns.barplot(x = df['OpSys'], y = df['Price (Euro)'], color = 'teal')
+  plt.xticks(rotation=45)
+  plt.title('OpSys & Price (Euro)')
+  plt.show()
+
 st.title('Laptop Data Visualizations')
 
 st.header('TypeName vs. Price (Euro)')
