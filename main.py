@@ -406,3 +406,24 @@ with col3:
         """, 
         unsafe_allow_html=True
     )
+
+
+st.title("CPU_Frequency & Price")
+import streamlit as st
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+data = {'CPU_Frequency (GHz)': [2.4, 3.1, 2.8, 3.6, 4.0],
+        'Price (Euro)': [200, 350, 300, 450, 500]}
+df = pd.DataFrame(data)
+
+def cpu_freq_vs_price_bar_chart(df):
+    plt.figure(figsize=(10,6))
+    sns.barplot(x=df['CPU_Frequency (GHz)'], y=df['Price (Euro)'], color='magenta')
+    plt.xticks(rotation=80)
+    plt.title('CPU Frequency (GHz) vs. Price (Euro)')
+    st.pyplot(plt)
+
+st.title("CPU Frequency vs Price Bar Chart")
+cpu_freq_vs_price_bar_chart(df)
