@@ -58,7 +58,7 @@ sns.barplot(x=company_data["Company"], y=company_data["Count"], color='blue')  #
 plt.title('Distribution of Laptop Companies')
 plt.xlabel('Company')
 plt.ylabel('Count')
-plt.xticks(rotation=100)
+plt.xticks(rotation=80)
 
 # Show the plot in Streamlit
 st.pyplot(plt)
@@ -335,7 +335,7 @@ sns.barplot(x=memory_data["Memory"], y=memory_data["Count"], color='blue')  # Us
 plt.title('Memory Distribution')
 plt.xlabel('Memory (GB)')
 plt.ylabel('Number of Laptops')
-plt.xticks(rotation=95)
+plt.xticks(rotation=80)
 st.pyplot(plt)
 st.write('')
 st.write('')
