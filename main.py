@@ -35,32 +35,33 @@ sum
 desc = df.describe()
 desc
 
+
 #daniel santillan
-#companies
 st.title("Distribution of Laptop Companies")
-st.write("It can be seen that **Asus and Dell** take the lead followed up by HP.")
+st.write("It can be seen that Asus and Dell takes on the lead followed up by HP.")
 
-data = {'Company': ['Dell', 'Lenovo', 'HP', 'Asus', 'Acer', 'MSI', 'Toshiba', 'Apple', 
-                    'Samsung', 'Razer', 'Mediacom', 'Microsoft', 'Xiaomi', 'Vero', 
-                    'Chuwi', 'Google', 'Fujitsu', 'LG', 'Huawei'],
-        'Count': [291, 289, 268, 152, 101, 54, 48, 21, 9, 7, 7, 6, 4, 4, 3, 3, 3, 3, 2]}
+company_data = {
+    "Company": [
+        "Dell", "Lenovo", "HP", "Asus", "Acer", "MSI", "Toshiba",
+        "Apple", "Samsung", "Razer", "Mediacom", "Microsoft", 
+        "Xiaomi", "Vero", "Chuwi", "Google", "Fujitsu", "LG", "Huawei"
+    ],
+    "Count": [
+        291, 289, 268, 152, 101, 54, 48, 21, 9, 
+        7, 7, 6, 4, 4, 3, 3, 3, 3, 2
+    ]
+}
 
-df = pd.DataFrame(data)
+# Set up the matplotlib figure
+plt.figure(figsize=(8, 6))
+sns.barplot(x=company_data["Company"], y=company_data["Count"], color='blue')  # Use barplot for categorical data
+plt.title('Distribution of Laptop Companies')
+plt.xlabel('Company')
+plt.ylabel('Count')
+plt.xticks(rotation=45)
 
-# Create the bar chart
-fig, ax = plt.subplots()
-ax.bar(df['Company'], df['Count'])
-
-# Set chart labels and title
-ax.set_xlabel('Company')
-ax.set_ylabel('Count')
-ax.set_title('Distribution of Laptop Companies')
-
-# Rotate the x-axis labels for better readability
-plt.xticks(rotation=45, ha='right')
-
-# Display the plot in Streamlit
-st.pyplot(fig)
+# Show the plot in Streamlit
+st.pyplot(plt)
 st.write('')
 st.write('')
 
