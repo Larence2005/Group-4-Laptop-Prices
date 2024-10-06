@@ -394,6 +394,7 @@ def cpu_freq_vs_price_bar_chart(df):
     st.pyplot(plt)
 
 st.title("CPU Frequency vs Price Bar Chart")
+st.write('The graph above shows that as a the laptop with the CPU Frequency (GHz) of 3.1GHz is the most expensive one. However, it does not necessarily mean that if the CPU Frequency (GHz) of a laptop increases, the price also increases. This is because there are other factors such as brand, additional features, or specific model configurations that can be considered')
 cpu_freq_vs_price_bar_chart(df)
 st.write('')
 st.write('')
