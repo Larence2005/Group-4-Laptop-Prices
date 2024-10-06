@@ -294,6 +294,8 @@ st.pyplot(fig)
 st.write('')
 st.write('')
 
+
+
 #MEMORY - EDELLE LUMABI
 # Data dictionary
 data = {
@@ -326,8 +328,8 @@ data = {
 df = pd.DataFrame(data)
 
 # Streamlit app
-st.title("Memory Count Distribution")
-st.write("This table displays the count of different memory configurations.")
+st.title("Memory Distribution")
+st.write("Based from the graph, most laptops have a 256GB SSD memory followed by a 1TB HDD memory.")
 st.dataframe(df)
 
 # Optional: Display a bar chart
@@ -335,8 +337,6 @@ st.bar_chart(df.set_index("Memory"))
 # Optional blank space
 st.write('')
 st.write('')
-
-
 
 
 #CPU FREQ VS PRICE - NICK
