@@ -35,7 +35,7 @@ sum
 desc = df.describe()
 desc
 
-"# Laptop Companies" #daniel santillan
+#daniel santillan
 
 st.title("Distribution of Laptop Companies")
 st.write("It can be seen that **Asus and Dell** take the lead followed up by HP.")
@@ -63,6 +63,7 @@ plt.xticks(rotation=45, ha='right')
 st.pyplot(fig)
 st.write('')
 st.write('')
+
 
 st.title("Top 20 Products by Count")
 st.write("Among all the brands, the **XPS 13** from Dell takes on the lead as the most sold item based on the data provided.")
