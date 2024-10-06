@@ -294,33 +294,26 @@ st.pyplot(fig)
 st.write('')
 st.write('')
 
-
-
 #MEMORY - EDELLE LUMABI
-# Data dictionary
+
+# Data
 data = {
-    "Memory": [
-        "256GB SSD", "1TB HDD", "500GB HDD", "512GB SSD", "128GB SSD + 1TB HDD",
-        "128GB SSD", "256GB SSD + 1TB HDD", "32GB Flash Storage", "2TB HDD",
-        "512GB SSD + 1TB HDD", "1TB SSD", "64GB Flash Storage", "256GB SSD + 2TB HDD",
-        "256GB Flash Storage", "16GB Flash Storage", "1.0TB Hybrid", "32GB SSD",
-        "180GB SSD", "128GB Flash Storage", "512GB SSD + 2TB HDD", "16GB SSD",
-        "512GB Flash Storage", "1TB SSD + 1TB HDD", "256GB SSD + 500GB HDD",
-        "128GB SSD + 2TB HDD", "256GB SSD + 256GB SSD", "512GB SSD + 256GB SSD",
-        "512GB SSD + 512GB SSD", "64GB Flash Storage + 1TB HDD", "1TB HDD + 1TB HDD",
-        "32GB HDD", "64GB SSD", "128GB HDD", "240GB SSD", "8GB SSD", "508GB Hybrid",
-        "1.0TB HDD", "512GB SSD + 1.0TB Hybrid", "256GB SSD + 1.0TB Hybrid"
+    'Memory': [
+        '256GB SSD', '1TB HDD', '500GB HDD', '512GB SSD', '128GB SSD + 1TB HDD', 
+        '128GB SSD', '256GB SSD + 1TB HDD', '32GB Flash Storage', '2TB HDD', 
+        '512GB SSD + 1TB HDD', '1TB SSD', '64GB Flash Storage', '256GB SSD + 2TB HDD', 
+        '256GB Flash Storage', '16GB Flash Storage', '1.0TB Hybrid', '32GB SSD', 
+        '180GB SSD', '128GB Flash Storage', '512GB SSD + 2TB HDD', '16GB SSD', 
+        '512GB Flash Storage', '1TB SSD + 1TB HDD', '256GB SSD + 500GB HDD', 
+        '128GB SSD + 2TB HDD', '256GB SSD + 256GB SSD', '512GB SSD + 256GB SSD', 
+        '512GB SSD + 512GB SSD', '64GB Flash Storage + 1TB HDD', '1TB HDD + 1TB HDD', 
+        '32GB HDD', '64GB SSD', '128GB HDD', '240GB SSD', '8GB SSD', 
+        '508GB Hybrid', '1.0TB HDD', '512GB SSD + 1.0TB Hybrid', 
+        '256GB SSD + 1.0TB Hybrid'
     ],
-    "Count": [
-        412, 215, 124, 114, 94,
-        74, 73, 36, 16,
-        14, 14, 13, 10, 8,
-        7, 7, 6, 5,
-        4, 3, 3, 2,
-        2, 2, 2, 2,
-        1, 1, 1, 1,
-        1, 1, 1, 1,
-        1, 1, 1, 1, 1
+    'Count': [
+        412, 215, 124, 114, 94, 74, 73, 36, 16, 14, 14, 13, 10, 8, 7, 7, 
+        6, 5, 4, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
     ]
 }
 
@@ -328,15 +321,34 @@ data = {
 df = pd.DataFrame(data)
 
 # Streamlit app
-st.title("Memory Distribution")
-st.write("Based from the graph, most laptops have a 256GB SSD memory followed by a 1TB HDD memory.")
+st.title("Memory Distribution of Laptops")
+
+# Display the DataFrame in Streamlit
+st.write("## Memory Distribution Data")
 st.dataframe(df)
 
-# Optional: Display a bar chart
-st.bar_chart(df.set_index("Memory"))
+# Plot Memory Distribution as a bar graph
+st.write("## Memory Distribution Graph")
+
+# Set figure size
+fig, ax = plt.subplots(figsize=(10, 8))
+
+# Create a seaborn bar plot
+sns.barplot(x='Memory', y='Count', data=df, color='blue', ax=ax)
+
+# Set titles and labels
+ax.set_title('Memory Distribution')
+ax.set_xlabel('Number of Laptops')
+ax.set_ylabel('Memory')
+
+# Display the plot in Streamlit
+st.pyplot(fig)
+
 # Optional blank space
 st.write('')
 st.write('')
+
+
 
 
 #CPU FREQ VS PRICE - NICK
