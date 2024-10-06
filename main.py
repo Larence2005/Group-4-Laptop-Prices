@@ -35,7 +35,7 @@ sum
 desc = df.describe()
 desc
 
-#daniel santillan
+"# Laptop Companies" #daniel santillan
 
 st.title("Distribution of Laptop Companies")
 st.write("It can be seen that **Asus and Dell** take the lead followed up by HP.")
@@ -61,9 +61,22 @@ plt.xticks(rotation=45, ha='right')
 
 # Display the plot in Streamlit
 st.pyplot(fig)
-st.write('')
-st.write('')
 
+
+"# Products" #daniel santillan
+data = {
+    'Product': [
+        'XPS 13', 'Inspiron 3567', '250 G6', 'Vostro 3568', 'Legion Y520-15/KBN',
+        'ProBook 450', 'Inspiron 5570', 'Alienware 17', 'Inspiron 5570', 
+        'Satellite Pro', 'EliteBook 580', 'Aspire 3', 'ThinkPad X1', 
+        'Inspiron 7567', 'MacBook Pro', 'EliteBook 850', 'EliteBook 820',
+        'XPS 15', 'IdeaPad 320-15/KBN'
+    ],
+    'Count': [
+        30, 27, 20, 18, 16, 15, 14, 12, 12, 10,
+        9, 9, 8, 8, 7, 7, 6, 6, 5, 5
+    ]
+}df = pd.DataFrame(data)
 
 st.title("Top 20 Products by Count")
 st.write("Among all the brands, the **XPS 13** from Dell takes on the lead as the most sold item based on the data provided.")
@@ -81,8 +94,18 @@ ax.set_ylabel('Count')
 plt.xticks(rotation=70, ha='right')
 
 st.pyplot(fig)
-st.write('')
-st.write('')
+
+
+
+
+"# TypeName" #daniel santillan
+
+data = {
+    'TypeName': [
+        'Laptop', 'Desktop', 'Tablet', 'Laptop', 'Desktop', 
+        'Laptop', 'Laptop', 'Tablet', 'Desktop', 'Laptop'
+    ]
+}df = pd.DataFrame(data)
 
 # Title of the Streamlit app
 st.title("TypeName Pie Graph (Daniel Santillan)")
@@ -326,8 +349,48 @@ st.write('')
 st.write('')
 
 
+#MEMORY - EDELLE LUMABI
+st.title('Memory')
+st.write('The data indicates a strong preference for CPUs in the 2.00 GHz to 2.90 GHz range, highlighting consumer demand trends and market availability. CPUs with lower frequencies are less frequently found.')
+st.write('')
+data = {
+    "Memory": ["256GB SSD", "1TB HDD", "500GB HDD", "512GB SSD", "128GB SSD + 1TB HDD", "128GB SSD", "128GB SSD",
+              "32GB Flash Storage", "2TB HDD", "512GB SSD + 1TB HDD", "1TB SSD", "64GB Flash Storage", "256GB SSD + 2TB HDD",
+              "256GB Flash Storage", "16GB Flash Storage", "1.0TB Hybrid", "32GB SSD", "180GB SSD", "128GB Flash Storage",
+              "512GB SSD + 2TB HDD", "16GB SSD", "512GB Flash Storage", "1TB SSD + 1TB HDD", "256GB SSD + 500GB HDD",
+              "128GB SSD + 2TB HDD", "256GB SSD + 256GB SSD", "512GB SSD + 256GB SSD", "512GB SSD + 512GB SSD	",
+              "64GB Flash Storage + 1TB HDD", "1TB HDD + 1TB HDD", "32GB HDD", "64GB SSD", "128GB HDD", "240GB SSD", "8GB SSD",
+              "508GB Hybrid", "1.0TB HDD", "512GB SSD + 1.0TB Hybrid", "256GB SSD + 1.0TB Hybrid"],
+    "count": [412,215,124,114,94,74,73,36,16,14,14,13,10,8,7,7.6,5,4,3,3,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1]
+}
+df = pd.DataFrame(data)
 
+# Create the bar chart
+fig, ax = plt.subplots(figsize=(12, 6))
+x = np.arange(len(df['Memory']))  # Create an array for x-axis positions
+colors = plt.cm.viridis(np.linspace(0, 1, len(df)))  # Generate colors
 
+# Create a bar chart using the count data
+ax.bar(x, df['count'], color=colors)
+
+# Set the title and labels
+ax.set_title('Memory Distribution')
+ax.set_xlabel('Memory (GB)')
+ax.set_ylabel('Number of Laptops')
+
+# Set the x-ticks to display memory values
+ax.set_xticks(x)
+ax.set_xticklabels(df['Memory'], rotation=90, ha='right', fontsize=10)
+
+# Adjust layout to avoid overlap
+plt.tight_layout()
+
+# Display the plot in Streamlit
+st.pyplot(fig)
+
+# Optional blank space
+st.write('')
+st.write('')
 
 #=====================================THIS IS A FOOTER=====================================
 st.write('')
@@ -381,24 +444,3 @@ with col3:
         """, 
         unsafe_allow_html=True
     )
-
-
-st.title("CPU_Frequency & Price")
-import streamlit as st
-import matplotlib.pyplot as plt
-import seaborn as sns
-import pandas as pd
-
-data = {'CPU_Frequency (GHz)': [2.4, 3.1, 2.8, 3.6, 4.0],
-        'Price (Euro)': [200, 350, 300, 450, 500]}
-df = pd.DataFrame(data)
-
-def cpu_freq_vs_price_bar_chart(df):
-    plt.figure(figsize=(10,6))
-    sns.barplot(x=df['CPU_Frequency (GHz)'], y=df['Price (Euro)'], color='magenta')
-    plt.xticks(rotation=80)
-    plt.title('CPU Frequency (GHz) vs. Price (Euro)')
-    st.pyplot(plt)
-
-st.title("CPU Frequency vs Price Bar Chart")
-cpu_freq_vs_price_bar_chart(df)
