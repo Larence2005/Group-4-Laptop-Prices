@@ -447,6 +447,38 @@ cpu_freq_vs_price_bar_chart(df)
 st.write('')
 st.write('')
 
+#TypeName and Price(Euro) (Nicholas Pastiu)
+
+import streamlit as st
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+def typename_vs_price_bar_chart(df):
+    fig, ax = plt.subplots()
+    sns.barplot(x=df['TypeName'], y=df['Price (Euro)'], color='lime', ax=ax)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
+    ax.set_title('TypeName vs. Price (Euro)')
+    st.pyplot(fig)
+
+typename_vs_price_bar_chart(df)
+
+#OpSys and Price (Euro) (Nicholas Pastiu)
+
+import streamlit as st
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+def op_sys_vs_price_bar_chart(df):
+    fig, ax = plt.subplots()
+    sns.barplot(x=df['OpSys'], y=df['Price (Euro)'], color='teal', ax=ax)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
+    ax.set_title('OpSys vs. Price (Euro)')
+    st.pyplot(fig)
+
+op_sys_vs_price_bar_chart(df)
+
+
+
 
 
 
