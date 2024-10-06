@@ -450,7 +450,7 @@ st.write('')
 
 #TypeName and Price(Euro) (Nicholas Pastiu)
 def typename_vs_price_bar_chart(df):
-df['Product'].value_counts()
+  df['Product'].value_counts()
   sns.barplot(x = df['TypeName'], y = df['Price (Euro)'], color = 'lime')
   plt.xticks(rotation=45)
   plt.title('TypeName vs. Price (Euro)')
