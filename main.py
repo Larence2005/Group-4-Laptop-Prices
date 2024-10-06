@@ -68,10 +68,7 @@ st.write('')
 
 #Products BAR GRAPH (Daniel Santillan)
 
-# For demonstration, I'll create a sample DataFrame. Remove this and load your actual data.
-data = {'Product'}
-df = pd.DataFrame(data)
-
+df['Product'].value_counts()
 # Streamlit application
 st.title('Top Products Bar Graph')
 
