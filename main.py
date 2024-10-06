@@ -443,7 +443,7 @@ df = pd.DataFrame(data)
 def cpu_freq_vs_price_bar_chart(df):
     plt.figure(figsize=(10,6))
     sns.barplot(x=df['CPU_Frequency (GHz)'], y=df['Price (Euro)'], color='magenta')
-    plt.xticks(rotation=80)
+    plt.xticks(rotation=180)
     plt.title('CPU Frequency (GHz) vs. Price (Euro)')
     st.pyplot(plt)
 
