@@ -448,35 +448,38 @@ st.write('')
 
 
 
-# Display the value counts of 'OpSys' and 'Price (Euro)'
+def load_data():
+    # Replace this with your actual data loading method
+    df = pd.read_csv('laptop_price - dataset.csv')
+    return df
+
+df = load_data()
+
+st.title('Laptop Analysis Dashboard')
+
+# Display value counts
+st.header('Value Counts')
 st.subheader('Operating System Distribution')
 st.write(df['OpSys'].value_counts())
 
-st.subheader('Price (Euro) Distribution')
+st.subheader('Price Distribution')
 st.write(df['Price (Euro)'].value_counts())
 
-# Function to display TypeName vs. Price (Euro) bar chart
-def typename_vs_price_bar_chart(df):
-    plt.figure(figsize=(10, 6))
-    sns.barplot(x=df['TypeName'], y=df['Price (Euro)'], color='lime')
-    plt.xticks(rotation=45)
-    plt.title('TypeName vs. Price (Euro)')
-    st.pyplot(plt)  # Display plot in Streamlit
+# TypeName vs Price chart
+st.header('TypeName vs. Price (Euro)')
+fig, ax = plt.subplots(figsize=(12, 6))
+sns.barplot(x='TypeName', y='Price (Euro)', data=df, color='lime', ax=ax)
+plt.xticks(rotation=45)
+plt.title('TypeName vs. Price (Euro)')
+st.pyplot(fig)
 
-# Function to display OpSys vs. Price (Euro) bar chart
-def op_sys_vs_price_bar_chart(df):
-    plt.figure(figsize=(10, 6))
-    sns.barplot(x=df['OpSys'], y=df['Price (Euro)'], color='teal')
-    plt.xticks(rotation=45)
-    plt.title('OpSys & Price (Euro)')
-    st.pyplot(plt)  # Display plot in Streamlit
-
-# Display the charts
-st.subheader('TypeName vs. Price (Euro)')
-typename_vs_price_bar_chart(df)
-
-st.subheader('OpSys vs. Price (Euro)')
-op_sys_vs_price_bar_chart(df)
+# OpSys vs Price chart
+st.header('OpSys vs. Price (Euro)')
+fig, ax = plt.subplots(figsize=(12, 6))
+sns.barplot(x='OpSys', y='Price (Euro)', data=df, color='teal', ax=ax)
+plt.xticks(rotation=45)
+plt.title('OpSys & Price (Euro)')
+st.pyplot(fig)
 
 
 
