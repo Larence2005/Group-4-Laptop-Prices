@@ -342,6 +342,41 @@ st.pyplot(plt)
 st.write('')
 st.write('')
 
+#OPSYS - EDELLE
+os = [
+    'Windows 10', 'No OS', 'Linux', 'Windows 7',
+    'Chrome OS', 'macOS', 'Mac OS X', 'Windows 10 S',
+    'Android'
+]
+counts = [1048, 66, 58, 45, 27, 13, 8, 8, 2]
+
+# Create a DataFrame
+df = pd.DataFrame({'Operating System': os, 'Count': counts})
+
+# Streamlit Title
+st.title('Operating System Distribution')
+
+# Description
+st.write('This chart represents the distribution of different operating systems used across devices.')
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(10, 8))
+ax.bar(df['Operating System'], df['Count'], color='purple')
+ax.set_title('Operating Systems')
+ax.set_xlabel('Operating System')
+ax.set_ylabel('Count')
+ax.set_xticklabels(df['Operating System'], rotation=90)
+
+# Adjust layout to avoid overlap
+plt.tight_layout()
+
+# Display the plot in Streamlit
+st.pyplot(fig)
+
+# Optional blank space
+st.write('')
+st.write('')
+
 
 #CPU FREQ VS PRICE - NICK
 
