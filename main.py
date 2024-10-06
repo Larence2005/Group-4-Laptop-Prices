@@ -13,7 +13,7 @@ st.write('')
 
 st.markdown("<h3>GROUP 4 - BM3</h3>", unsafe_allow_html=True)
 
-st.write("The purpose of this is to convert our previous Data Visualization activity in Google Colab Notebook into a Streamlit Web Application")
+st.write("The purpose of this website is to convert our previous Data Visualization activity in Google Colab Notebook into a Streamlit Web Application")
 st.markdown("- Check the GitHub Repository at the bottom for the source code.")
 st.write('')
 st.markdown('<hr style="border:1px solid gray">', unsafe_allow_html=True)
