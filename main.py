@@ -66,6 +66,21 @@ st.write('')
 st.write('')
 
 
+#Products BAR GRAPH (Daniel Santillan)
+
+top_products = df['Product'].value_counts().head(20).reset_index()
+top_products.columns = ['Product', 'count']
+
+plt.figure(figsize=(8, 6))
+sns.barplot(data=top_products, x='Product', y='count')
+plt.title('Top 20 Products by Count')
+plt.xlabel('Product')
+plt.ylabel('Count')
+plt.xticks(rotation=70, ha='right')
+plt.show()
+
+
+
 #Screen Resolution Bar Graph (SOPHIA VITUG)
 
 # Create a title for the app
@@ -111,6 +126,7 @@ chart = alt.Chart(df).mark_bar().encode(
 st.altair_chart(chart, use_container_width=True)
 st.write('')
 st.write('')
+
 
 
 #CPU_Company Pie Graph (SOPHIA VITUG)
