@@ -298,7 +298,11 @@ st.write('')
 
 #MEMORY - EDELLE LUMABI
 # Create and display the bar chart
-st.bar_chart(pd.DataFrame({
+st.title("Memory Distribution")
+st.write("Based from the graph, most laptops have a 256GB SSD memory followed by a 1TB HDD memory.")
+
+# Data preparation (using existing data array)
+memory_data = {
     "Memory": [
         "256GB SSD", "1TB HDD", "500GB HDD", "512GB SSD", "128GB SSD + 1TB HDD",
         "128GB SSD", "256GB SSD + 1TB HDD", "32GB Flash Storage", "2TB HDD",
@@ -322,7 +326,18 @@ st.bar_chart(pd.DataFrame({
         1, 1, 1, 1,
         1, 1, 1, 1, 1
     ]
-}).set_index("Memory"))
+}
+
+# Set up the matplotlib figure
+plt.figure(figsize=(10, 8))
+sns.barplot(x=memory_data["Memory"], y=memory_data["Count"], color='blue')  # Use barplot for categorical data
+plt.title('Memory Distribution')
+plt.xlabel('Memory (GB)')
+plt.ylabel('Number of Laptops')
+plt.xticks(rotation=90)
+
+# Show the plot in Streamlit
+st.pyplot(plt)
 # Optional blank space
 st.write('')
 st.write('')
