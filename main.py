@@ -36,29 +36,39 @@ desc = df.describe()
 desc
 
 "# Laptop Companies" #daniel santillan
-data = {'Company': ['Dell', 'Apple', 'HP', 'Dell', 'Apple', 'Asus', 'Dell', 'HP', 'Apple']}
-df = pd.DataFrame(data)
 
 st.title("Distribution of Laptop Companies")
+st.write("It can be seen that **Asus and Dell** take the lead followed up by HP.")
 
-unique_companies = df['Company'].unique()
-colors = sns.color_palette("husl", len(unique_companies))
+data = {'Company': ['Dell', 'Lenovo', 'HP', 'Asus', 'Acer', 'MSI', 'Toshiba', 'Apple', 
+                    'Samsung', 'Razer', 'Mediacom', 'Microsoft', 'Xiaomi', 'Vero', 
+                    'Chuwi', 'Google', 'Fujitsu', 'LG', 'Huawei'],
+        'Count': [291, 289, 268, 152, 101, 54, 48, 21, 9, 7, 7, 6, 4, 4, 3, 3, 3, 3, 2]}
 
-fig, ax = plt.subplots(figsize=(8, 6))
-sns.countplot(data=df, x='Company', ax=ax, palette=colors)
-ax.set_title('Distribution of Laptop Companies')
+df = pd.DataFrame(data)
+
+# Create the bar chart
+fig, ax = plt.subplots()
+ax.bar(df['Company'], df['Count'])
+
+# Set chart labels and title
 ax.set_xlabel('Company')
 ax.set_ylabel('Count')
-plt.xticks(rotation=45)
+ax.set_title('Distribution of Laptop Companies')
 
+# Rotate the x-axis labels for better readability
+plt.xticks(rotation=45, ha='right')
+
+# Display the plot in Streamlit
 st.pyplot(fig)
+
 
 "# Products" #daniel santillan
 data = {'Product': ['Product1', 'Product2', 'Product3', 'Product1', 'Product2', 'Product1'] * 10}
 df = pd.DataFrame(data)
 
 st.title("Top 20 Products by Count")
-
+st.write("Among all the brands, the **XPS 13** from Dell takes on the lead as the most sold item based on the data provided.")
 top_products = df['Product'].value_counts().head(20).reset_index()
 top_products.columns = ['Product', 'count']
 
@@ -75,6 +85,7 @@ plt.xticks(rotation=70, ha='right')
 st.pyplot(fig)
 
 
+
 "# TypeName" #daniel santillan
 
 data = {'TypeName': ['A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'A', 'C']}
@@ -82,7 +93,7 @@ df = pd.DataFrame(data)
 
 # Title of the Streamlit app
 st.title("TypeName Pie Graph (Daniel Santillan)")
-
+st.write("From the pie chart, we see that Notebook is the most advertised name for general consumers (55.5%) and Gaming for specific consumers (16.1%).")
 # Creating the pie chart
 fig, ax = plt.subplots(figsize=(8, 8))
 ax.pie(df['TypeName'].value_counts(), labels=df['TypeName'].value_counts().index, autopct='%1.1f%%')
