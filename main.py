@@ -80,18 +80,8 @@ ax.set_ylabel('Count')
 plt.xticks(rotation=70, ha='right')
 
 st.pyplot(fig)
-
-
-
-
-"# TypeName" #daniel santillan
-
-data = {
-    'TypeName': [
-        'Laptop', 'Desktop', 'Tablet', 'Laptop', 'Desktop', 
-        'Laptop', 'Laptop', 'Tablet', 'Desktop', 'Laptop'
-    ]
-}df = pd.DataFrame(data)
+st.write('')
+st.write('')
 
 # Title of the Streamlit app
 st.title("TypeName Pie Graph (Daniel Santillan)")
