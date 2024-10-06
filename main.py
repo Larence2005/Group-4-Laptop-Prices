@@ -297,28 +297,27 @@ st.write('')
 #MEMORY - EDELLE LUMABI
 
 # Data
-data = {
-    'Memory': [
-        '256GB SSD', '1TB HDD', '500GB HDD', '512GB SSD', '128GB SSD + 1TB HDD', 
-        '128GB SSD', '256GB SSD + 1TB HDD', '32GB Flash Storage', '2TB HDD', 
-        '512GB SSD + 1TB HDD', '1TB SSD', '64GB Flash Storage', '256GB SSD + 2TB HDD', 
-        '256GB Flash Storage', '16GB Flash Storage', '1.0TB Hybrid', '32GB SSD', 
-        '180GB SSD', '128GB Flash Storage', '512GB SSD + 2TB HDD', '16GB SSD', 
-        '512GB Flash Storage', '1TB SSD + 1TB HDD', '256GB SSD + 500GB HDD', 
-        '128GB SSD + 2TB HDD', '256GB SSD + 256GB SSD', '512GB SSD + 256GB SSD', 
-        '512GB SSD + 512GB SSD', '64GB Flash Storage + 1TB HDD', '1TB HDD + 1TB HDD', 
-        '32GB HDD', '64GB SSD', '128GB HDD', '240GB SSD', '8GB SSD', 
-        '508GB Hybrid', '1.0TB HDD', '512GB SSD + 1.0TB Hybrid', 
-        '256GB SSD + 1.0TB Hybrid'
-    ],
-    'Count': [
-        412, 215, 124, 114, 94, 74, 73, 36, 16, 14, 14, 13, 10, 8, 7, 7, 
-        6, 5, 4, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-    ]
-}
+memory_list = [
+    '256GB SSD', '1TB HDD', '500GB HDD', '512GB SSD', '128GB SSD + 1TB HDD', 
+    '128GB SSD', '256GB SSD + 1TB HDD', '32GB Flash Storage', '2TB HDD', 
+    '512GB SSD + 1TB HDD', '1TB SSD', '64GB Flash Storage', '256GB SSD + 2TB HDD', 
+    '256GB Flash Storage', '16GB Flash Storage', '1.0TB Hybrid', '32GB SSD', 
+    '180GB SSD', '128GB Flash Storage', '512GB SSD + 2TB HDD', '16GB SSD', 
+    '512GB Flash Storage', '1TB SSD + 1TB HDD', '256GB SSD + 500GB HDD', 
+    '128GB SSD + 2TB HDD', '256GB SSD + 256GB SSD', '512GB SSD + 256GB SSD', 
+    '512GB SSD + 512GB SSD', '64GB Flash Storage + 1TB HDD', '1TB HDD + 1TB HDD', 
+    '32GB HDD', '64GB SSD', '128GB HDD', '240GB SSD', '8GB SSD', 
+    '508GB Hybrid', '1.0TB HDD', '512GB SSD + 1.0TB Hybrid', 
+    '256GB SSD + 1.0TB Hybrid'
+]
+
+count_list = [
+    412, 215, 124, 114, 94, 74, 73, 36, 16, 14, 14, 13, 10, 8, 7, 7, 
+    6, 5, 4, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+]
 
 # Create DataFrame
-df = pd.DataFrame(data)
+df = pd.DataFrame({'Memory': memory_list, 'Count': count_list})
 
 # Streamlit app
 st.title("Memory Distribution of Laptops")
@@ -343,7 +342,6 @@ ax.set_ylabel('Memory')
 
 # Display the plot in Streamlit
 st.pyplot(fig)
-
 # Optional blank space
 st.write('')
 st.write('')
