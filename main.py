@@ -365,7 +365,7 @@ ax.bar(df['Operating System'], df['Count'], color='purple')
 ax.set_title('Operating Systems')
 ax.set_xlabel('Operating System')
 ax.set_ylabel('Count')
-ax.set_xticklabels(df['Operating System'], rotation=90)
+ax.set_xticklabels(df['Operating System'], rotation=45)
 
 # Adjust layout to avoid overlap
 plt.tight_layout()
