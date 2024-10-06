@@ -124,10 +124,9 @@ st.pyplot(fig)
 st.write('')
 st.write('')
 
-#CPU_Type Bar Graph (SOPHIA VITUG)
 
 # Create a title for the app
-st.title("CPU Type Distribution Bar Graph")
+st.title("CPU Type Bar Graph")
 st.write("This bar graph indicates the most popular CPU type, with 193 occurrences, followed by the Core i7 7700HQ and Core i7 7500U, which have 147 and 133 counts, respectively. After the top three, the frequency drops significantly, with the Core i3 6066U and Core i7 8550U being fairly common but in smaller quantities. Furthermore, rare CPU types appear only once, such as M3-6Y30, A6-Series 7310, and others, which indicates that these types are less frequently used in laptops.")
 st.write('')
 # Prepare the data
@@ -211,19 +210,6 @@ st.pyplot(fig)
 st.write('')
 st.write('')
 
-#RAM (GB) GRAPH (EDELLE LUMABI)
-st.title('RAM (GB) Distribution')
-
-# Create the plot
-fig, ax = plt.subplots(figsize=(10, 8))
-sns.histplot(df['RAM (GB)'], color='green', ax=ax)
-ax.set_title('RAM (GB) Distribution')
-ax.set_xlabel('RAM (GB)')
-ax.set_ylabel('Frequency')
-
-# Display the plot
-st.pyplot(fig)
-
 #GPU Type Bar Graph (JOHN LARENCE LUSAYA)
 gpus = [
     'HD Graphics 620', 'HD Graphics 520', 'UHD Graphics 620', 'GeForce GTX 1050',
@@ -255,12 +241,20 @@ st.pyplot(fig)
 st.write('')
 st.write('')
 
+if 'RAM (GB)' in df.columns:
+    st.title('RAM (GB) Distribution')
 
+    # Create the plot
+    fig, ax = plt.subplots(figsize=(10, 8))
+    sns.histplot(df['RAM (GB)'], color='green', ax=ax)
+    ax.set_title('RAM (GB) Distribution')
+    ax.set_xlabel('RAM (GB)')
+    ax.set_ylabel('Frequency')
 
-
-
-
-
+    # Display the plot
+    st.pyplot(fig)
+else:
+    st.error("Column 'RAM (GB)' not found in the DataFrame. Please check the column name.")
 
 #=====================================THIS IS A FOOTER=====================================
 st.write('')
