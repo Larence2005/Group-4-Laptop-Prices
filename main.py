@@ -324,9 +324,6 @@ data = {
     ]
 }
 
-# Create DataFrame
-df = pd.DataFrame(data)
-
 # Streamlit app
 st.title("Memory Distribution")
 st.write("Based from the graph, most laptops have a 256GB SSD memory followed by a 1TB HDD memory.")
