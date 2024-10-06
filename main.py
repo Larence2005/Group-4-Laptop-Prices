@@ -303,52 +303,57 @@ st.pyplot(fig)
 st.write('')
 st.write('')
 
+#=============================================================================================================
+
 #MEMORY - EDELLE LUMABI
 st.title('Memory')
 st.write('The data indicates a strong preference for CPUs in the 2.00 GHz to 2.90 GHz range, highlighting consumer demand trends and market availability. CPUs with lower frequencies are less frequently found.')
 st.write('')
 
-# Data
-data = {
-    "Memory": ["256GB SSD", "1TB HDD", "500GB HDD", "512GB SSD", "128GB SSD + 1TB HDD", "128GB SSD", "128GB SSD",
-               "32GB Flash Storage", "2TB HDD", "512GB SSD + 1TB HDD", "1TB SSD", "64GB Flash Storage", "256GB SSD + 2TB HDD",
-               "256GB Flash Storage", "16GB Flash Storage", "1.0TB Hybrid", "32GB SSD", "180GB SSD", "128GB Flash Storage",
-               "512GB SSD + 2TB HDD", "16GB SSD", "512GB Flash Storage", "1TB SSD + 1TB HDD", "256GB SSD + 500GB HDD",
-               "128GB SSD + 2TB HDD", "256GB SSD + 256GB SSD", "512GB SSD + 256GB SSD", "512GB SSD + 512GB SSD",
-               "64GB Flash Storage + 1TB HDD", "1TB HDD + 1TB HDD", "32GB HDD", "64GB SSD", "128GB HDD", "240GB SSD", "8GB SSD",
-               "508GB Hybrid", "1.0TB HDD", "512GB SSD + 1.0TB Hybrid", "256GB SSD + 1.0TB Hybrid"],
-    "count": [412, 215, 124, 114, 94, 74, 73, 36, 16, 14, 14, 13, 10, 8, 7, 7, 5, 4, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-}
+memory = ["256GB SSD", "1TB HDD", "500GB HDD", "512GB SSD", "128GB SSD + 1TB HDD",
+          "128GB SSD", "32GB Flash Storage", "2TB HDD", "512GB SSD + 1TB HDD",
+          "1TB SSD", "64GB Flash Storage", "256GB SSD + 2TB HDD", "256GB Flash Storage",
+          "16GB Flash Storage", "1.0TB Hybrid", "32GB SSD", "180GB SSD", "128GB Flash Storage",
+          "512GB SSD + 2TB HDD", "16GB SSD", "512GB Flash Storage", "1TB SSD + 1TB HDD",
+          "256GB SSD + 500GB HDD", "128GB SSD + 2TB HDD", "256GB SSD + 256GB SSD",
+          "512GB SSD + 256GB SSD", "512GB SSD + 512GB SSD", "64GB Flash Storage + 1TB HDD",
+          "1TB HDD + 1TB HDD", "32GB HDD", "64GB SSD", "128GB HDD", "240GB SSD",
+          "8GB SSD", "508GB Hybrid", "1.0TB HDD", "512GB SSD + 1.0TB Hybrid",
+          "256GB SSD + 1.0TB Hybrid"]
 
-# Create DataFrame
+count = [412, 215, 124, 114, 94, 74, 73, 36, 16, 14, 14, 13, 10, 8, 7, 7,
+         5, 4, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+# Create a DataFrame
+data = {'Memory': memory, 'Count': count}
 df = pd.DataFrame(data)
 
-# Create the bar chart
+# Streamlit Title
+st.title('Memory Distribution')
+
+# Description
+st.write("The bar chart above indicates the distribution of different memory types in laptops. It can be observed that the most common memory type is *256GB SSD*, while larger storage options like *1TB HDD* and *2TB HDD* are less frequent. The variety of storage options reflects consumer preferences in the market.")
+st.write('')
+
+# Create the plot
 fig, ax = plt.subplots(figsize=(12, 6))
-x = np.arange(len(df['Memory']))  # Create an array for x-axis positions
-colors = plt.cm.viridis(np.linspace(0, 1, len(df)))  # Generate colors
-
-# Create a bar chart using the count data
-ax.bar(x, df['count'], color=colors)
-
-# Set the title and labels
+sns.barplot(x='Memory', y='Count', data=df, color='blue', ax=ax)
 ax.set_title('Memory Distribution')
-ax.set_xlabel('Memory (GB)')
+ax.set_xlabel('Memory Type')
 ax.set_ylabel('Number of Laptops')
 
-# Set the x-ticks to display memory values
-ax.set_xticks(x)
-ax.set_xticklabels(df['Memory'], rotation=90, ha='right', fontsize=10)
+# Rotate x-ticks for better readability
+ax.set_xticklabels(ax.get_xticklabels(), rotation=90, ha='right', fontsize=10)
 
 # Adjust layout to avoid overlap
 plt.tight_layout()
 
-# Display the plot in Streamlit
+# Display the plot
 st.pyplot(fig)
+st.write('')
+st.write('')
 
-# Optional blank space
-st.write('')
-st.write('')
+#=========================================================================================================
 
 #CPU FREQ VS PRICE - NICK
 
