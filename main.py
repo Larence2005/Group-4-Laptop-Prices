@@ -70,20 +70,6 @@ st.write('')
 st.title("Top 20 Products by Count")
 st.write("Among all the brands, the **XPS 13** from Dell takes on the lead as the most sold item based on the data provided.")
 
-top_products = df['Product'].value_counts().head(20).reset_index()
-top_products.columns = ['Product', 'Count']
-
-# Plotting the bar graph
-plt.figure(figsize=(8, 6))
-sns.barplot(data=top_products, x='Product', y='Count')
-plt.title('Top 20 Products by Count')
-plt.xlabel('Product')
-plt.ylabel('Count')
-plt.xticks(rotation=70, ha='right')
-
-# Display the plot in Streamlit
-st.pyplot(plt)
-
 
 
 
