@@ -357,7 +357,7 @@ df = pd.DataFrame({'Operating System': os, 'Count': counts})
 st.title('Operating System Distribution')
 
 # Description
-st.write('This chart represents the distribution of different operating systems used across devices.')
+st.write('Based from the graph below, the operating system or OS used by most laptops is **Windows 10** and some laptops have no OS at all. There are only a few who use MacOS and Android OS.')
 
 # Create the plot
 fig, ax = plt.subplots(figsize=(10, 8))
