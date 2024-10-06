@@ -256,7 +256,7 @@ ax.bar(gpus, counts, color=colors)
 ax.set_title('GPU Type')
 ax.set_xlabel('GPU Type')
 ax.set_ylabel('Count')
-ax.set_xticklabels(gpus, rotation=45, ha='right')
+ax.set_xticklabels(gpus, rotation=40, ha='right')
 
 for i, v in enumerate(counts):
     ax.text(i, v, str(v), ha='center', va='bottom')
@@ -335,7 +335,7 @@ sns.barplot(x=memory_data["Memory"], y=memory_data["Count"], color='blue')  # Us
 plt.title('Memory Distribution')
 plt.xlabel('Memory (GB)')
 plt.ylabel('Number of Laptops')
-plt.xticks(rotation=85)
+plt.xticks(rotation=90)
 st.pyplot(plt)
 st.write('')
 st.write('')
