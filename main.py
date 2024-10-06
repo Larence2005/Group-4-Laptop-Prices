@@ -58,7 +58,7 @@ sns.barplot(x=company_data["Company"], y=company_data["Count"], color='blue')  #
 plt.title('Distribution of Laptop Companies')
 plt.xlabel('Company')
 plt.ylabel('Count')
-plt.xticks(rotation=45)
+plt.xticks(rotation=30)
 
 # Show the plot in Streamlit
 st.pyplot(plt)
