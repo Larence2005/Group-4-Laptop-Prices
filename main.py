@@ -67,17 +67,33 @@ st.write('')
 
 
 #Products BAR GRAPH (Daniel Santillan)
+df = pd.read_csv('laptop_price - dataset.csv')
 
+# For demonstration, I'll create a sample DataFrame. Remove this and load your actual data.
+data = {'Product': ['Product A', 'Product B', 'Product C', 'Product D', 'Product E'] * 10}
+df = pd.DataFrame(data)
+
+# Streamlit application
+st.title('Top Products Bar Graph')
+
+# Calculate top products
 top_products = df['Product'].value_counts().head(20).reset_index()
-top_products.columns = ['Product', 'count']
+top_products.columns = ['Product', 'Count']
 
+# Plotting
 plt.figure(figsize=(8, 6))
-sns.barplot(data=top_products, x='Product', y='count')
+sns.barplot(data=top_products, x='Product', y='Count')
 plt.title('Top 20 Products by Count')
 plt.xlabel('Product')
 plt.ylabel('Count')
 plt.xticks(rotation=70, ha='right')
-plt.show()
+
+# Show the plot in Streamlit
+st.pyplot(plt)
+
+# Optional: Add a button to refresh the data or re-run the analysis
+if st.button('Refresh Data'):
+    st.experimental_rerun()
 
 
 
