@@ -334,7 +334,7 @@ sns.barplot(x=memory_data["Memory"], y=memory_data["Count"], color='blue')  # Us
 plt.title('Memory Distribution')
 plt.xlabel('Memory (GB)')
 plt.ylabel('Number of Laptops')
-plt.xticks(rotation=40)
+plt.xticks(rotation=10)
 
 # Show the plot in Streamlit
 st.pyplot(plt)
