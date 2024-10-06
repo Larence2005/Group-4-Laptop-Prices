@@ -76,7 +76,9 @@ data = {
         30, 27, 20, 18, 16, 15, 14, 12, 12, 10,
         9, 9, 8, 8, 7, 7, 6, 6, 5, 5
     ]
-}df = pd.DataFrame(data)
+}
+
+df = pd.DataFrame(data)
 
 st.title("Top 20 Products by Count")
 st.write("Among all the brands, the **XPS 13** from Dell takes on the lead as the most sold item based on the data provided.")
