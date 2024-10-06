@@ -339,7 +339,6 @@ plt.xticks(rotation=90)
 
 # Show the plot in Streamlit
 st.pyplot(plt)
-# Optional blank space
 st.write('')
 st.write('')
 
