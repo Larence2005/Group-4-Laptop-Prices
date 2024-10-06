@@ -448,19 +448,28 @@ st.write('')
 
 
 
-# TypeName and Price (Euro) (Nicholas Pastiu)
-def typename_vs_price_bar_chart(df):
-    sns.barplot(x=df['TypeName'], y=df['Price (Euro)'], color='lime')
-    plt.xticks(rotation=45)
-    plt.title('TypeName vs. Price (Euro)')
-    st.pyplot(plt.gcf())  # Display the chart in Streamlit
+# Display the column names to confirm
+st.write("Columns in the DataFrame:", df.columns)
 
-# OpSys and Price (Euro) (Nicholas Pastiu)
+# TypeName and Price (Euro)
+def typename_vs_price_bar_chart(df):
+    if 'TypeName' in df.columns and 'Price (Euro)' in df.columns:
+        sns.barplot(x=df['TypeName'], y=df['Price (Euro)'], color='lime')
+        plt.xticks(rotation=45)
+        plt.title('TypeName vs. Price (Euro)')
+        st.pyplot(plt.gcf())  # Display the chart in Streamlit
+    else:
+        st.error("Error: 'TypeName' or 'Price (Euro)' column not found")
+
+# OpSys and Price (Euro)
 def op_sys_vs_price_bar_chart(df):
-    sns.barplot(x=df['OpSys'], y=df['Price (Euro)'], color='teal')
-    plt.xticks(rotation=45)
-    plt.title('OpSys & Price (Euro)')
-    st.pyplot(plt.gcf())  # Display the chart in Streamlit
+    if 'OpSys' in df.columns and 'Price (Euro)' in df.columns:
+        sns.barplot(x=df['OpSys'], y=df['Price (Euro)'], color='teal')
+        plt.xticks(rotation=45)
+        plt.title('OpSys & Price (Euro)')
+        st.pyplot(plt.gcf())  # Display the chart in Streamlit
+    else:
+        st.error("Error: 'OpSys' or 'Price (Euro)' column not found")
 
 # Streamlit App
 st.title('Laptop Data Visualizations')
@@ -470,7 +479,6 @@ typename_vs_price_bar_chart(df)
 
 st.header('OpSys vs. Price (Euro)')
 op_sys_vs_price_bar_chart(df)
-
 
 
 
