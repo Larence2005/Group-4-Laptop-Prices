@@ -64,27 +64,9 @@ st.pyplot(fig)
 st.write('')
 st.write('')
 
-
-
 #title top products
 st.title("Top 20 Products by Count")
 st.write("Among all the brands, the **XPS 13** from Dell takes on the lead as the most sold item based on the data provided.")
-
-top_products = df['Product'].value_counts().head(20).reset_index()
-top_products.columns = ['Product', 'Count']
-
-# Plotting the bar graph
-plt.figure(figsize=(8, 6))
-sns.barplot(data=top_products, x='Product', y='Count')
-plt.title('Top 20 Products by Count')
-plt.xlabel('Product')
-plt.ylabel('Count')
-plt.xticks(rotation=70, ha='right')
-
-# Display the plot in Streamlit
-st.pyplot(plt)
-
-
 
 
 # Title  TypeName
@@ -324,21 +306,34 @@ st.pyplot(fig)
 st.write('')
 st.write('')
 
+#===================================================================================================
+
 #MEMORY - EDELLE LUMABI
 st.title('Memory')
-st.write('The data indicates a strong preference for CPUs in the 2.00 GHz to 2.90 GHz range, highlighting consumer demand trends and market availability. CPUs with lower frequencies are less frequently found.')
+
+# Description
+st.write('The data indicates a strong preference for various types of memory storage in laptops.')
 st.write('')
 
 # Data
 data = {
-    "Memory": ["256GB SSD", "1TB HDD", "500GB HDD", "512GB SSD", "128GB SSD + 1TB HDD", "128GB SSD", "128GB SSD",
-               "32GB Flash Storage", "2TB HDD", "512GB SSD + 1TB HDD", "1TB SSD", "64GB Flash Storage", "256GB SSD + 2TB HDD",
-               "256GB Flash Storage", "16GB Flash Storage", "1.0TB Hybrid", "32GB SSD", "180GB SSD", "128GB Flash Storage",
-               "512GB SSD + 2TB HDD", "16GB SSD", "512GB Flash Storage", "1TB SSD + 1TB HDD", "256GB SSD + 500GB HDD",
-               "128GB SSD + 2TB HDD", "256GB SSD + 256GB SSD", "512GB SSD + 256GB SSD", "512GB SSD + 512GB SSD",
-               "64GB Flash Storage + 1TB HDD", "1TB HDD + 1TB HDD", "32GB HDD", "64GB SSD", "128GB HDD", "240GB SSD", "8GB SSD",
-               "508GB Hybrid", "1.0TB HDD", "512GB SSD + 1.0TB Hybrid", "256GB SSD + 1.0TB Hybrid"],
-    "count": [412, 215, 124, 114, 94, 74, 73, 36, 16, 14, 14, 13, 10, 8, 7, 7, 5, 4, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    "Memory": ["256GB SSD", "1TB HDD", "500GB HDD", "512GB SSD", "128GB SSD + 1TB HDD", 
+               "128GB SSD", "256GB SSD + 1TB HDD", "32GB Flash Storage", "2TB HDD", 
+               "512GB SSD + 1TB HDD", "1TB SSD", "64GB Flash Storage", 
+               "256GB SSD + 2TB HDD", "256GB Flash Storage", "16GB Flash Storage", 
+               "1.0TB Hybrid", "32GB SSD", "180GB SSD", "128GB Flash Storage", 
+               "512GB SSD + 2TB HDD", "16GB SSD", "512GB Flash Storage", 
+               "1TB SSD + 1TB HDD", "256GB SSD + 500GB HDD", "128GB SSD + 2TB HDD", 
+               "256GB SSD + 256GB SSD", "512GB SSD + 256GB SSD", 
+               "512GB SSD + 512GB SSD", "64GB Flash Storage + 1TB HDD", 
+               "1TB HDD + 1TB HDD", "32GB HDD", "64GB SSD", "128GB HDD", 
+               "240GB SSD", "8GB SSD", "508GB Hybrid", "1.0TB HDD", 
+               "512GB SSD + 1.0TB Hybrid", "256GB SSD + 1.0TB Hybrid"],
+    
+    "count": [412, 215, 124, 114, 94, 74, 73, 36, 16, 14, 
+              14, 13, 10, 8, 7, 7, 6, 5, 4, 3, 
+              3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 
+              1, 1, 1, 1, 1, 1, 1, 1]  # Adjusted counts to match the number of memory types
 }
 
 # Create DataFrame
@@ -370,6 +365,8 @@ st.pyplot(fig)
 # Optional blank space
 st.write('')
 st.write('')
+
+#===============================================================================================================
 
 #CPU FREQ VS PRICE - NICK
 
