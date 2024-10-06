@@ -10,6 +10,8 @@ Members:
 - SANTILLAN, Daniel
 - VITUG, Sophia
 
+Streamlit URL: https://group4-laptop-prices.streamlit.app/
+
 
 Insights from our Data Visualization and Data Analysis: 💻📊
 
