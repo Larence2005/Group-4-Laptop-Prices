@@ -64,8 +64,19 @@ st.pyplot(fig)
 
 
 "# Products" #daniel santillan
-data = {'Product': ['Product1', 'Product2', 'Product3', 'Product1', 'Product2', 'Product1'] * 10}
-df = pd.DataFrame(data)
+data = {
+    'Product': [
+        'XPS 13', 'Inspiron 3567', '250 G6', 'Vostro 3568', 'Legion Y520-15/KBN',
+        'ProBook 450', 'Inspiron 5570', 'Alienware 17', 'Inspiron 5570', 
+        'Satellite Pro', 'EliteBook 580', 'Aspire 3', 'ThinkPad X1', 
+        'Inspiron 7567', 'MacBook Pro', 'EliteBook 850', 'EliteBook 820',
+        'XPS 15', 'IdeaPad 320-15/KBN'
+    ],
+    'Count': [
+        30, 27, 20, 18, 16, 15, 14, 12, 12, 10,
+        9, 9, 8, 8, 7, 7, 6, 6, 5, 5
+    ]
+}df = pd.DataFrame(data)
 
 st.title("Top 20 Products by Count")
 st.write("Among all the brands, the **XPS 13** from Dell takes on the lead as the most sold item based on the data provided.")
@@ -86,10 +97,15 @@ st.pyplot(fig)
 
 
 
+
 "# TypeName" #daniel santillan
 
-data = {'TypeName': ['A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'A', 'C']}
-df = pd.DataFrame(data)
+data = {
+    'TypeName': [
+        'Laptop', 'Desktop', 'Tablet', 'Laptop', 'Desktop', 
+        'Laptop', 'Laptop', 'Tablet', 'Desktop', 'Laptop'
+    ]
+}df = pd.DataFrame(data)
 
 # Title of the Streamlit app
 st.title("TypeName Pie Graph (Daniel Santillan)")
