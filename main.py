@@ -241,20 +241,28 @@ st.pyplot(fig)
 st.write('')
 st.write('')
 
-if 'RAM (GB)' in df.columns:
-    st.title('RAM (GB) Distribution')
+#RAM GB - EDELLE LUMABI
+RAM: [8, 4, 16, 6, 12, 32, 2, 24, 64],
+count: [613, 367, 198, 35, 25, 17, 16, 3, 1]
 
-    # Create the plot
-    fig, ax = plt.subplots(figsize=(10, 8))
-    sns.histplot(df['RAM (GB)'], color='green', ax=ax)
-    ax.set_title('RAM (GB) Distribution')
-    ax.set_xlabel('RAM (GB)')
-    ax.set_ylabel('Frequency')
+df = pd.DataFrame(data)
 
-    # Display the plot
-    st.pyplot(fig)
-else:
-    st.error("Column 'RAM (GB)' not found in the DataFrame. Please check the column name.")
+st.title('RAM (GB) Distribution')
+st.write("The histogram above indicates that most laptops only have **8GB of RAM**. The graph is skewed to the right which means there are less laptops who use larger sizes of RAM. It can also be observed that most laptops only have RAM sizes that range from **0 - 16 GB.**")
+st.write('')
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(10, 8))
+sns.histplot(RAM, count, color='green', ax=ax)
+ax.set_title('RAM (GB) Distribution')
+ax.set_xlabel('RAM (GB)')
+ax.set_ylabel('Frequency')
+
+# Display the plot
+st.pyplot(fig)
+st.write('')
+st.write('')
+
 
 #=====================================THIS IS A FOOTER=====================================
 st.write('')
@@ -275,7 +283,7 @@ with col1:
         - <a href="https://github.com/edelle-del" style="text-decoration:none;">Edelle Lumabi</a>
         - <a href="https://github.com/Larence2005" style="text-decoration:none;">John Larence Lusaya</a> 
         - <a href="https://github.com/edelle-del" style="text-decoration:none;">Nicholas Rian Pastiu</a>
-        - <a href="https://github.com/zxeki" style="text-decoration:none;">Daniel Santillan</a>
+        - <a href="https://github.com/edelle-del" style="text-decoration:none;">Daniel Santillan</a>
         - <a href="https://github.com/sophiavitug10" style="text-decoration:none;">Sophia Vitug</a>
         """, 
         unsafe_allow_html=True
