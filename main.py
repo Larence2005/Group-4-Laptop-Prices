@@ -461,7 +461,7 @@ typename_vs_price_bar_chart(df)
 
 #OpSys and Price (Euro) (Nicholas Pastiu)
 def op_sys_vs_price_bar_chart(df):
-
+  df['Product'].value_counts()
   sns.barplot(x = df['OpSys'], y = df['Price (Euro)'], color = 'teal')
   plt.xticks(rotation=45)
   plt.title('OpSys & Price (Euro)')
