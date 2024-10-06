@@ -334,7 +334,7 @@ sns.barplot(x=memory_data["Memory"], y=memory_data["Count"], color='blue')  # Us
 plt.title('Memory Distribution')
 plt.xlabel('Memory (GB)')
 plt.ylabel('Number of Laptops')
-plt.xticks(rotation=90)
+plt.xticks(rotation=40)
 
 # Show the plot in Streamlit
 st.pyplot(plt)
@@ -365,7 +365,7 @@ ax.bar(df['Operating System'], df['Count'], color='purple')
 ax.set_title('Operating Systems')
 ax.set_xlabel('Operating System')
 ax.set_ylabel('Count')
-ax.set_xticklabels(df['Operating System'], rotation=45)
+ax.set_xticklabels(df['Operating System'], rotation=40)
 
 # Adjust layout to avoid overlap
 plt.tight_layout()
