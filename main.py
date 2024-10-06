@@ -448,7 +448,7 @@ st.write('')
 st.write('')
 
 #TypeName and Price(Euro) (Nicholas Pastiu)
-
+df['Product'].value_counts()
 def typename_vs_price_bar_chart(df):
     fig, ax = plt.subplots()
     sns.barplot(x=df['TypeName'], y=df['Price (Euro)'], color='lime', ax=ax)
@@ -456,9 +456,7 @@ def typename_vs_price_bar_chart(df):
     ax.set_title('TypeName vs. Price (Euro)')
     st.pyplot(fig)
 
-typename_vs_price_bar_chart(df)
-
-#OpSys and Price (Euro) (Nicholas Pastiu)
+# Function to plot OpSys vs Price (Euro)
 def op_sys_vs_price_bar_chart(df):
     fig, ax = plt.subplots()
     sns.barplot(x=df['OpSys'], y=df['Price (Euro)'], color='teal', ax=ax)
@@ -466,8 +464,14 @@ def op_sys_vs_price_bar_chart(df):
     ax.set_title('OpSys vs. Price (Euro)')
     st.pyplot(fig)
 
-op_sys_vs_price_bar_chart(df)
+# Display charts in Streamlit
+st.title('Laptop Data Visualizations')
 
+st.header('TypeName vs. Price (Euro)')
+typename_vs_price_bar_chart(df)
+
+st.header('OpSys vs. Price (Euro)')
+op_sys_vs_price_bar_chart(df)
 
 
 
